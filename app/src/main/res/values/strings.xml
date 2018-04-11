@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pain Search</string>
+    <string name="drawer_item_pain">Что болит?</string>
+    <string name="drawer_item_home">Главная</string>
+    <string name="drawer_item_woman">Женский</string>
+    <string name="drawer_item_man">Мужской</string>
+    <string name="drawer_item_free_analog">Аналоги лекарств</string>
+    <string name="drawer_item_free_med_card">Медицинская Карта</string>
+    <string name="off">Выход</string>
+    <string name="annot">Пока здесь пусто. Сюда будет добавляться история ваших болезней</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="main">Главная</string>
+    <string name="history">Здесь будет отражена история ваших болезней</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_drawer">Главная</string>
+    <string name="questions">Ответьте на несколько вопросов:</string>
+    <string name="manwoman">Выберете ваш пол:</string>
+    <string name="lastPassword">Введите старый пароль</string>
+    <string name="newPassword">Введите новый пароль</string>
+    <string name="btnSave">Сохранить</string>
+
+    <string name="name">Имя</string>
+
+    <string name="surname">Фамилия</string>
+
+    <string name="email">Почта</string>
+
+    <string name="password">Пароль</string>
+
+    <string name="save">Сохранить</string>
+
+
+    <string name="Podrobnee">Подробнее</string>
+    <string name="Noshpa">Но-Шпа</string>
+    <string name="price_115">115 ₽</string>
+    <string name="nurofen">Нурофен</string>
+    <string name="price_230">230 ₽</string>
+    <string name="voltaren">Вольтарен</string>
+    <string name="price_212">212 ₽</string>
+    <string name="title_activity_nurofen">ActivityNurofen</string>
+    <string name="title_activity_noshpa">ActivityNoshpa</string>
+    <string name="title_activity_voltaren">ActivityVoltaren</string>
+    <string name="analogvol" formatted="false">"Диклоназ гель 5%,30 г - от 80 рублей \n\n"
+        "Ортофен мазь 2%, 30 г - от 40 рублей \n\n"
+        "Диклофенак - от 13 рублей \n\n"</string>
+    <string name="analognur" formatted="false">
+        "Ибупрофен (400 мг, таблетки № 30) – от 80 рублей \n\n"
+        "Миг 400 (таблетки № 20) – от 135 рублей \n\n"
+        "Максиколд (суспензия 200 г) – от 150 рублей \n\n"
+        "Ибуклин (табл. 400 мг + 325 мг № 20) – от 110 рублей \n\n"
+        "Цефекон Д (суппозитории 100 мг №10) – от 40 рублей \n\n"
+        "Парацетамол (таблетки 200 мг № 10) – от 4 рубля \n\n"
+        "Эффералган (сироп 90 мл) – от 80 рублей \n\n"
+</string>
+    <string name="analognos" formatted="false">
+        "Дротаверин (таблетки 40 мг. 20 шт.) - Цена от 16 рублей \n\n"
+        "Папаверина гидрохлорид МС (таблетки 40 мг. 10 шт.) - Цена от 9 рублей  \n\n"
+        "Спаозмонет (таблетки 40 мг. 20 шт.) - Цена от 72 рублей \n\n"
+        "Спазмол (таблетки 40 мг. 20 шт.) - Цена от 29 рублей  \n\n"
+    </string>
+    <string name="analog">АНАЛОГИ:</string>
+</resources>
