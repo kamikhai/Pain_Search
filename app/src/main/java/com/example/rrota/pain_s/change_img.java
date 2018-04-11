@@ -8,6 +8,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewTreeObserver;
@@ -15,6 +16,17 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Map;
 
 public class change_img extends AppCompatActivity implements View.OnClickListener {
     public static final String EXTRA_CIRCULAR_REVEAL_X = "EXTRA_CIRCULAR_REVEAL_X";
@@ -23,6 +35,13 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
     public ImageView image;
     private int revealX;
     private int revealY;
+    private String name,surname,email;
+    private FirebaseAuth mAuth;
+    private DatabaseReference mUserReference;
+    private ValueEventListener mUserListener;
+
+    private static final String TAG = "change_image";
+    FirebaseUser user = mAuth.getInstance().getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +102,36 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
         } else {
             rootLayout.setVisibility(View.VISIBLE);
         }
+
+        mUserReference = FirebaseDatabase.getInstance().getReference()
+                .child("users").child(user.getUid());
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                name=user.username.toString();
+                surname=user.usersurname.toString();
+                email=user.email.toString();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                Toast.makeText(change_img.this, "Failed to load user.",
+                        Toast.LENGTH_SHORT).show();
+            }
+        };
+        mUserReference.addValueEventListener(postListener);
+
+        mUserListener = postListener;
+
+
     }
 
     protected void revealActivity(int x, int y) {
@@ -132,40 +181,64 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.us_1:
-
+                User user1 = new User(surname,name,email,1);
+                Map<String, Object> userValues = user1.toMap();
+                mUserReference.updateChildren(userValues);
                 break;
             case R.id.us_2:
-
+                user1 = new User(surname,name,email,2);
+                userValues = user1.toMap();
+                mUserReference.updateChildren(userValues);
                 break;
             case R.id.us_3:
-
+                user1 = new User(surname,name,email,3);
+                userValues = user1.toMap();
+                mUserReference.updateChildren(userValues);
                 break;
             case R.id.us_4:
-
+                user1 = new User(surname,name,email,4);
+                userValues = user1.toMap();
+                mUserReference.updateChildren(userValues);
                 break;
             case R.id.us_5:
-
+                user1 = new User(surname,name,email,5);
+                userValues = user1.toMap();
+                mUserReference.updateChildren(userValues);
                 break;
             case R.id.us_6:
-
+                user1 = new User(surname,name,email,6);
+                userValues = user1.toMap();
+                mUserReference.updateChildren(userValues);
                 break;
             case R.id.us_7:
-
+                user1 = new User(surname,name,email,7);
+                userValues = user1.toMap();
+                mUserReference.updateChildren(userValues);
                 break;
             case R.id.us_8:
-
+                user1 = new User(surname,name,email,8);
+                userValues = user1.toMap();
+                mUserReference.updateChildren(userValues);
                 break;
             case R.id.us_9:
-
+                user1 = new User(surname,name,email,9);
+                userValues = user1.toMap();
+                mUserReference.updateChildren(userValues);
                 break;
             case R.id.us_10:
-
+                user1 = new User(surname,name,email,10);
+                userValues = user1.toMap();
+                mUserReference.updateChildren(userValues);
                 break;
             case R.id.us_11:
-
+                user1 = new User(surname,name,email,11);
+                userValues = user1.toMap();
+                mUserReference.updateChildren(userValues);
                 break;
             case R.id.us_12:
-
+                user1 = new User(surname,name,email,12);
+                userValues = user1.toMap();
+                mUserReference.updateChildren(userValues);
                 break;
         }
     }

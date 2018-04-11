@@ -44,6 +44,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
     private EditText changeName,changeSurname;
     private String name,surname,email;
     private ImageView photo;
+    private int ph;
 
 
     FirebaseUser user = mAuth.getInstance().getCurrentUser();
@@ -120,15 +121,15 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
                 name=user.username.toString();
                 surname=user.usersurname.toString();
                 email=user.email.toString();
-//                Log.d("myLog",name+surname);
+                ph=user.photo;
                 UserName.setText(user.username);
                 UserSurname.setText(user.usersurname);
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                Toast.makeText(Profile.this, "Failed to load post.",
+                Log.w(TAG, "loadUser:onCancelled", databaseError.toException());
+                Toast.makeText(Profile.this, "Failed to load user.",
                         Toast.LENGTH_SHORT).show();
             }
         };
@@ -159,7 +160,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.save_name:
                 newName=changeName.getText().toString();
-                User user1 = new User(surname,newName,email);
+                User user1 = new User(surname,newName,email,ph);
                 Map<String, Object> userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
                 NameLiEdit.setVisibility(View.GONE);
@@ -171,11 +172,11 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.save_surname:
                 newSurname=changeName.getText().toString();
-                user1 = new User(newSurname,name,email);
+                user1 = new User(newSurname,name,email,ph);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
-                NameLiEdit.setVisibility(View.GONE);
-                NameLi.setVisibility(View.VISIBLE);
+                SurnameLiEdit.setVisibility(View.GONE);
+                SurnameLi.setVisibility(View.VISIBLE);
                 break;
         }
     }

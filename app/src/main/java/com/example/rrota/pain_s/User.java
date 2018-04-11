@@ -9,15 +9,17 @@ public class User {
     public String usersurname;
     public String username;
     public String email;
+    public int photo;
 
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public User(String usersurname, String username, String email) {
+    public User(String usersurname, String username, String email, int photo) {
         this.usersurname = usersurname;
         this.username = username;
         this.email = email;
+        this.photo = photo;
     }
 
     @Exclude
@@ -26,6 +28,7 @@ public class User {
         result.put("usersurname", usersurname);
         result.put("username", username);
         result.put("email", email);
+        result.put("photo", photo);
 
         return result;
     }
