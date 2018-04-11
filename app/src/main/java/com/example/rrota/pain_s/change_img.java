@@ -186,7 +186,10 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
                 mUserReference.updateChildren(userValues);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
 >>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
@@ -198,7 +201,10 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
                 mUserReference.updateChildren(userValues);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
 >>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
@@ -210,7 +216,10 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
                 mUserReference.updateChildren(userValues);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
 >>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
@@ -222,7 +231,10 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
                 mUserReference.updateChildren(userValues);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
 >>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
@@ -234,7 +246,10 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
                 mUserReference.updateChildren(userValues);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
 >>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
@@ -246,7 +261,10 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
                 mUserReference.updateChildren(userValues);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
 >>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
@@ -258,7 +276,10 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
                 mUserReference.updateChildren(userValues);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
 >>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
@@ -270,7 +291,10 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
                 mUserReference.updateChildren(userValues);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
 >>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
@@ -282,7 +306,10 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
                 mUserReference.updateChildren(userValues);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
 >>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
@@ -294,7 +321,10 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
                 mUserReference.updateChildren(userValues);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
 >>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
@@ -306,7 +336,10 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
                 mUserReference.updateChildren(userValues);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
 >>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
@@ -318,7 +351,10 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
                 mUserReference.updateChildren(userValues);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
 >>>>>>> c610cad47db74f9274973052e15602840ac43a31
 =======
