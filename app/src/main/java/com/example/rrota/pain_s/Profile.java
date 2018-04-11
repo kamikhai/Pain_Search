@@ -138,7 +138,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
 
         mUserListener = postListener;
 
-
+        
     }
 
     private void changePhoto(int ph) {
