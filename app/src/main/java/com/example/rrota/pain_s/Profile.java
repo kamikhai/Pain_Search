@@ -214,7 +214,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
                 SurnameLiEdit.setVisibility(View.VISIBLE);
                 break;
             case R.id.save_surname:
-                newSurname=changeName.getText().toString();
+                newSurname=changeSurname.getText().toString();
                 user1 = new User(newSurname,name,email,ph);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);

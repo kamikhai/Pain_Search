@@ -36,8 +36,8 @@ public class History extends AppCompatActivity {
     private LinkedList<Disease> diseases;
     private RecyclerView rv;
     private FirebaseAuth mAuth;
-    private DatabaseReference mPostReference;
-    private ValueEventListener mPostListener;
+    private DatabaseReference mUserReference;
+    private ValueEventListener mUserListener;
 
     ImageView im;
     TextView tx;
@@ -59,12 +59,12 @@ public class History extends AppCompatActivity {
         rv.setLayoutManager(llm);
         rv.setHasFixedSize(true);
 
-        mPostReference = FirebaseDatabase.getInstance().getReference()
+
+        mUserReference = FirebaseDatabase.getInstance().getReference()
                 .child("disease").child(user.getUid());
-        Log.d("initializte ", mPostReference.getKey());
+        Log.d("initializte ", mUserReference.getKey());
         im=findViewById(R.id.imageView3);
         tx=findViewById(R.id.textView);
-
 
     }
 //    private void initializeData(){
@@ -110,11 +110,11 @@ public class History extends AppCompatActivity {
              }
          };
 
-         mPostReference.addValueEventListener(postListener);
+         mUserReference.addValueEventListener(postListener);
          // [END post_value_event_listener]
 
          // Keep copy of post listener so we can remove it when app stops
-         mPostListener = postListener;
+         mUserListener = postListener;
 //         diseases=new ArrayList<Disease>();
 //         diseases.add(new Disease("1","123"));
 
