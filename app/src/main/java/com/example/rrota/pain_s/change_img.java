@@ -184,85 +184,145 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
                 User user1 = new User(surname,name,email,1);
                 Map<String, Object> userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
-                Intent ih = new Intent(change_img.this, Profile.class);
-                startActivity(ih);
+<<<<<<< HEAD
+<<<<<<< HEAD
+                onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
                 break;
             case R.id.us_2:
                 user1 = new User(surname,name,email,2);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
-                ih = new Intent(change_img.this, Profile.class);
-                startActivity(ih);
+<<<<<<< HEAD
+<<<<<<< HEAD
+                onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
                 break;
             case R.id.us_3:
                 user1 = new User(surname,name,email,3);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
-                ih = new Intent(change_img.this, Profile.class);
-                startActivity(ih);
+<<<<<<< HEAD
+<<<<<<< HEAD
+                onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
                 break;
             case R.id.us_4:
                 user1 = new User(surname,name,email,4);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
-                ih = new Intent(change_img.this, Profile.class);
-                startActivity(ih);
+<<<<<<< HEAD
+<<<<<<< HEAD
+                onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
                 break;
             case R.id.us_5:
                 user1 = new User(surname,name,email,5);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
-                ih = new Intent(change_img.this, Profile.class);
-                startActivity(ih);
+<<<<<<< HEAD
+<<<<<<< HEAD
+                onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
                 break;
             case R.id.us_6:
                 user1 = new User(surname,name,email,6);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
-                ih = new Intent(change_img.this, Profile.class);
-                startActivity(ih);
+<<<<<<< HEAD
+<<<<<<< HEAD
+                onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
                 break;
             case R.id.us_7:
                 user1 = new User(surname,name,email,7);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
-                ih = new Intent(change_img.this, Profile.class);
-                startActivity(ih);
+<<<<<<< HEAD
+<<<<<<< HEAD
+                onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
                 break;
             case R.id.us_8:
                 user1 = new User(surname,name,email,8);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
-                ih = new Intent(change_img.this, Profile.class);
-                startActivity(ih);
+<<<<<<< HEAD
+<<<<<<< HEAD
+                onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
                 break;
             case R.id.us_9:
                 user1 = new User(surname,name,email,9);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
-                ih = new Intent(change_img.this, Profile.class);
-                startActivity(ih);
+<<<<<<< HEAD
+<<<<<<< HEAD
+                onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
                 break;
             case R.id.us_10:
                 user1 = new User(surname,name,email,10);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
-                ih = new Intent(change_img.this, Profile.class);
-                startActivity(ih);
+<<<<<<< HEAD
+<<<<<<< HEAD
+                onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
                 break;
             case R.id.us_11:
                 user1 = new User(surname,name,email,11);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
-                ih = new Intent(change_img.this, Profile.class);
-                startActivity(ih);
+<<<<<<< HEAD
+<<<<<<< HEAD
+                onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
                 break;
             case R.id.us_12:
                 user1 = new User(surname,name,email,12);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
-                ih = new Intent(change_img.this, Profile.class);
-                startActivity(ih);
+<<<<<<< HEAD
+<<<<<<< HEAD
+                onBackPressed();
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
+=======
+>>>>>>> c610cad47db74f9274973052e15602840ac43a31
                 break;
         }
     }

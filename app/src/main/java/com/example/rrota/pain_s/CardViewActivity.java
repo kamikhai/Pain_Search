@@ -18,7 +18,7 @@ public class CardViewActivity extends Activity {
         disease = (TextView)findViewById(R.id.disease);
         doctors = (TextView)findViewById(R.id.doctors);
 
-        disease.setText("123");
+        disease.setText("20");
         doctors.setText("1");
     }
 }

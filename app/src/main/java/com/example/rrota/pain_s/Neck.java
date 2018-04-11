@@ -191,17 +191,19 @@ public class Neck extends AppCompatActivity implements View.OnClickListener {
         btn.setVisibility(View.GONE);
         tx2.setVisibility(View.VISIBLE);
 
-        String s="Возможные причины: ";
+        String s="Возможные причины:\n ";
         String k=Integer.toString(m);
         Log.d("myLog", k+" max");
         for(byte i=0;i<4;i++) if (count[i]==m)  {s+=disease[i]+" "; count[i]=-1;}
         tx.setText(s);
-        tx.setTextSize(30);
-        String s2="Советуем вам обратиться к терапевту";
+        tx.setTextSize(20);
+        tx2.setPadding(40,60,10,40);
+        String s2="Советуем вам обратиться к терапевту.\n";
 
-        s2+="\n Также специалисты: Невролог Вертеброневролог ";
+        s2+="\n \nТакже специалисты:\n - Невролог\n - Вертеброневролог\n ";
         tx2.setText(s2);
-        tx2.setTextSize(30);
+        tx2.setTextSize(20);
+        tx2.setPadding(40,60,10,40);
 
         final String d=s;
         final String doc=s2;

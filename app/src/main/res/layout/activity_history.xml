@@ -5,7 +5,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#cccccc"
+    android:background="#fff"
     tools:context="com.example.rrota.pain_s.History">
 
     <android.support.v7.widget.RecyclerView
@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/history_preview" />
+        app:srcCompat="@drawable/preload" />
 
     <TextView
         android:id="@+id/textView"

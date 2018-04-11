@@ -93,7 +93,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         editPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presentActivity(photo);
+                presentActivity(v);
             }
         });
     }
@@ -218,7 +218,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
                 newSurname=changeSurname.getText().toString();
                 user1 = new User(newSurname,name,email,ph);
                 userValues = user1.toMap();
-                
                 mUserReference.updateChildren(userValues);
                 SurnameLiEdit.setVisibility(View.GONE);
                 SurnameLi.setVisibility(View.VISIBLE);

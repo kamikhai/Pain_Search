@@ -151,7 +151,7 @@ public class MainActivity  extends BaseActivity implements View.OnClickListener 
         if (i == R.id.btn_signup) {
             signUp();
         } else if (i == R.id.link_login) {
-            startActivity(new Intent(MainActivity.this, Index.class));
+            onBackPressed();
         }
     }
 }

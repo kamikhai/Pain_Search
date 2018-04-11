@@ -273,22 +273,24 @@ public class Head extends AppCompatActivity implements View.OnClickListener{
         btn.setVisibility(View.GONE);
         tx2.setVisibility(View.VISIBLE);
 
-        String s="Возможные причины: ";
+        String s="Возможные причины:\n ";
         String k=Integer.toString(m);
         Log.d("myLog", k+" max");
         for(byte i=0;i<11;i++) if (count[i]==m)  {s+=disease[i]+" "; count[i]=-1;}
         tx.setText(s);
-        tx.setTextSize(30);
+        tx.setTextSize(20);
+        tx2.setPadding(40,60,10,40);
 
-        String s2="Советуем вам обратиться к терапевту";
+        String s2="Советуем вам обратиться к терапевту\n ";
         boolean f=false;
         if ((count[0]==-1) ||  (count[1]==-1) ||  (count[2]==-1) ||  (count[3]==-1) ||  (count[4]==-1) ||  (count[6]==-1) ||  (count[7]==-1) ||  (count[8]==-1)) { if (f) s2+="Невролог "; else {s2+="\n Также специалисты: "; s2+="Невролог "; f=true;}}
-        if ((count[4]==-1))  { if (f) s2+="Вертеброневролог "; else {s2+="\n Также специалисты: "; s2+="Вертеброневролог "; f=true;}}
-        if ((count[7]==-1)) { if (f) s2+="Травматолог Нейрохирург"; else {s2+="\n Также специалисты: "; s2+="Травматолог Нейрохирург"; f=true;}}
-        if ((count[9]==-1)) { if (f) s2+="Кардиолог "; else {s2+="\n Также специалисты: "; s2+="Кардиолог "; f=true;}}
-        if ((count[10]==-1)) { if (f) s2+="Отоларинголог "; else {s2+="\n Также специалисты: "; s2+="Отоларинголог "; f=true;}}
+        if ((count[4]==-1))  { if (f) s2+="- Вертеброневролог\n "; else {s2+="\n Также специалисты:\n "; s2+="- Вертеброневролог\n "; f=true;}}
+        if ((count[7]==-1)) { if (f) s2+="- Травматолог\n - Нейрохирург\n"; else {s2+="\n Также специалисты:\n "; s2+="- Травматолог\n - Нейрохирург\n "; f=true;}}
+        if ((count[9]==-1)) { if (f) s2+="- Кардиолог\n "; else {s2+="\n Также специалисты:\n "; s2+="- Кардиолог\n "; f=true;}}
+        if ((count[10]==-1)) { if (f) s2+="- Отоларинголог\n "; else {s2+="\n Также специалисты:\n "; s2+="- Отоларинголог\n "; f=true;}}
         tx2.setText(s2);
-        tx2.setTextSize(30);
+        tx2.setTextSize(20);
+        tx2.setPadding(40,60,10,40);
         final String d=s;
         final String doc=s2;
         final String userId=user.getUid();
