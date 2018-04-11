@@ -40,6 +40,8 @@ public class DrawerActivity extends AppCompatActivity
     private FirebaseAuth mAuth;
     private DatabaseReference mUserReference;
     private ValueEventListener mUserListener;
+    private ImageView photo;
+    private int ph;
 
     FirebaseUser user = mAuth.getInstance().getCurrentUser();
     private static final String TAG = "DrawerActivity";
@@ -47,9 +49,11 @@ public class DrawerActivity extends AppCompatActivity
 
     @Override
     public boolean onCreatePanelMenu(int featureId, Menu menu) {
+        photo=findViewById(R.id.imageView);
+
         mUserReference = FirebaseDatabase.getInstance().getReference()
                 .child("users").child(user.getUid());
-        ImageView image_view=findViewById(R.id.imageView);
+
         final TextView inp_name = (TextView) findViewById(R.id.nav_user_name);
         final TextView inp_em = (TextView) findViewById(R.id.nav_user_email);
         ValueEventListener postListener = new ValueEventListener() {
@@ -58,6 +62,8 @@ public class DrawerActivity extends AppCompatActivity
                 User user = dataSnapshot.getValue(User.class);
                 inp_name.setText(user.usersurname+" "+user.username);
                 inp_em.setText(user.email);
+                ph=user.photo;
+                changePhoto(ph);
             }
 
             @Override
@@ -73,6 +79,46 @@ public class DrawerActivity extends AppCompatActivity
         return super.onCreatePanelMenu(featureId, menu);
     }
 
+    private void changePhoto(int ph) {
+        switch (ph) {
+            case 1:
+                photo.setImageResource(R.drawable.user_1);
+                break;
+            case 2:
+                photo.setImageResource(R.drawable.user_2);
+                break;
+            case 3:
+                photo.setImageResource(R.drawable.user_3);
+                break;
+            case 4:
+                photo.setImageResource(R.drawable.user_4);
+                break;
+            case 5:
+                photo.setImageResource(R.drawable.user_5);
+                break;
+            case 6:
+                photo.setImageResource(R.drawable.user_6);
+                break;
+            case 7:
+                photo.setImageResource(R.drawable.user_7);
+                break;
+            case 8:
+                photo.setImageResource(R.drawable.user_8);
+                break;
+            case 9:
+                photo.setImageResource(R.drawable.user_9);
+                break;
+            case 10:
+                photo.setImageResource(R.drawable.user_10);
+                break;
+            case 11:
+                photo.setImageResource(R.drawable.user_11);
+                break;
+            case 12:
+                photo.setImageResource(R.drawable.user_12);
+                break;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

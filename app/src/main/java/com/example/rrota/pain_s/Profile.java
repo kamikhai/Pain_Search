@@ -122,6 +122,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
                 surname=user.usersurname.toString();
                 email=user.email.toString();
                 ph=user.photo;
+                changePhoto(ph);
                 UserName.setText(user.username);
                 UserSurname.setText(user.usersurname);
             }
@@ -139,6 +140,48 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
 
 
     }
+
+    private void changePhoto(int ph) {
+        switch (ph) {
+            case 1:
+                photo.setImageResource(R.drawable.user_1);
+                break;
+            case 2:
+                photo.setImageResource(R.drawable.user_2);
+                break;
+            case 3:
+                photo.setImageResource(R.drawable.user_3);
+                break;
+            case 4:
+                photo.setImageResource(R.drawable.user_4);
+                break;
+            case 5:
+                photo.setImageResource(R.drawable.user_5);
+                break;
+            case 6:
+                photo.setImageResource(R.drawable.user_6);
+                break;
+            case 7:
+                photo.setImageResource(R.drawable.user_7);
+                break;
+            case 8:
+                photo.setImageResource(R.drawable.user_8);
+                break;
+            case 9:
+                photo.setImageResource(R.drawable.user_9);
+                break;
+            case 10:
+                photo.setImageResource(R.drawable.user_10);
+                break;
+            case 11:
+                photo.setImageResource(R.drawable.user_11);
+                break;
+            case 12:
+                photo.setImageResource(R.drawable.user_12);
+                break;
+        }
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
