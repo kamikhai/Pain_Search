@@ -63,7 +63,7 @@
             android:theme="@style/AppRed" />
         <activity
             android:name=".Arms"
-            android:label="Плечи"
+            android:label="Руки"
             android:theme="@style/AppRed" />
         <activity
             android:name=".Shank"
