@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Pain_Search.iml" filepath="$PROJECT_DIR$/Pain_Search.iml" />
-      <module fileurl="file://C:\Users\rrota\Documents\GitHub\Pain_Search\Pain_Search.iml" filepath="C:\Users\rrota\Documents\GitHub\Pain_Search\Pain_Search.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\rrota\Documents\GitHub\Pain_Search\app\app.iml" filepath="C:\Users\rrota\Documents\GitHub\Pain_Search\app\app.iml" />
     </modules>
   </component>
 </project>
