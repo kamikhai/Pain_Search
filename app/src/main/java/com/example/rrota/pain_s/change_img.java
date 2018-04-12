@@ -195,6 +195,7 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
             case R.id.us_3:
                 user1 = new User(surname,name,email,3);
                 userValues = user1.toMap();
+                mUserReference.updateChildren(userValues);
                 onBackPressed();
                 break;
             case R.id.us_4:
