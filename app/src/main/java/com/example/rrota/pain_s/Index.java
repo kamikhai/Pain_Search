@@ -67,12 +67,10 @@ public class Index extends BaseActivity implements View.OnClickListener {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
-        // Views
         mEmailField = findViewById(R.id.input_email);
         mPasswordField = findViewById(R.id.input_password);
         mSignInButton = findViewById(R.id.btn_login);
 
-        // Click listeners
         mSignInButton.setOnClickListener(this);
     }
     private void signIn() {
@@ -114,14 +112,14 @@ public class Index extends BaseActivity implements View.OnClickListener {
     private boolean validateForm() {
         boolean result = true;
         if (TextUtils.isEmpty(mEmailField.getText().toString())) {
-            mEmailField.setError("Required");
+            mEmailField.setError("Обязательно");
             result = false;
         } else {
             mEmailField.setError(null);
         }
 
         if (TextUtils.isEmpty(mPasswordField.getText().toString())) {
-            mPasswordField.setError("Required");
+            mPasswordField.setError("Обязательно");
             result = false;
         } else {
             mPasswordField.setError(null);

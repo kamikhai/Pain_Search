@@ -61,7 +61,6 @@ public class MainActivity  extends BaseActivity implements View.OnClickListener 
         mTextInputLayout = (TextInputLayout) findViewById(R.id.textInputLayout);
 
 
-        // Click listeners
         mSignUpButton.setOnClickListener(this);
 
 
@@ -87,7 +86,7 @@ public class MainActivity  extends BaseActivity implements View.OnClickListener 
                         if (task.isSuccessful()) {
                             onAuthSuccess(task.getResult().getUser());
                         } else {
-                            Toast.makeText(MainActivity.this, "Sign Up Failed",
+                            Toast.makeText(MainActivity.this, "Регистрация провалена",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -98,27 +97,27 @@ public class MainActivity  extends BaseActivity implements View.OnClickListener 
         boolean result = true;
 
         if (TextUtils.isEmpty(mSurnameField.getText().toString())) {
-            mSurnameField.setError("Required");
+            mSurnameField.setError("Обязательно");
             result = false;
         } else {
             mSurnameField.setError(null);
         }
 
         if (TextUtils.isEmpty(mNameField.getText().toString())) {
-            mNameField.setError("Required");
+            mNameField.setError("Обязательно");
             result = false;
         } else {
             mNameField.setError(null);
         }
         if (TextUtils.isEmpty(mEmailField.getText().toString())) {
-            mEmailField.setError("Required");
+            mEmailField.setError("Обязательно");
             result = false;
         } else {
             mEmailField.setError(null);
         }
 
         if (TextUtils.isEmpty(mPasswordField.getText().toString())) {
-            mPasswordField.setError("Required");
+            mPasswordField.setError("Обязательно");
             result = false;
         } else {
             mPasswordField.setError(null);
@@ -131,20 +130,17 @@ public class MainActivity  extends BaseActivity implements View.OnClickListener 
         String username = mNameField.getText().toString();
         String usersurname = mSurnameField.getText().toString();
 
-        // Write new user
         writeNewUser(user.getUid(), usersurname, username, user.getEmail());
 
-        // Go to MainActivity
         startActivity(new Intent(MainActivity.this, DrawerActivity.class));
         finish();
     }
-    // [START basic_write]
     private void writeNewUser(String userId, String surname, String name, String email) {
         User user = new User(surname,name, email,2);
 
         mDatabase.child("users").child(userId).setValue(user);
     }
-    // [END basic_write]
+
     @Override
     public void onClick(View v) {
         int i = v.getId();

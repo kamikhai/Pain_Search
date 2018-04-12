@@ -69,8 +69,6 @@ public class DrawerActivity extends AppCompatActivity
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                Toast.makeText(DrawerActivity.this, "Failed to load User.",
-                        Toast.LENGTH_SHORT).show();
             }
         };
         mUserReference.addValueEventListener(postListener);

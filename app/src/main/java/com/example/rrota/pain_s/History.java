@@ -81,8 +81,6 @@ public class History extends AppCompatActivity {
              @Override
              public void onDataChange(DataSnapshot dataSnapshot) {
                  Log.d("Change ", "started");
-                 // Get Post object and use the values to update the UI
-//                User user = dataSnapshot.getValue(User.class);
                  Iterable<DataSnapshot> iterator = dataSnapshot.getChildren();
                  Iterator<DataSnapshot> iterator1 = iterator.iterator();
                  diseases.clear();
@@ -97,29 +95,17 @@ public class History extends AppCompatActivity {
                      im.setVisibility(View.GONE);
                      tx.setVisibility(View.GONE);
                  }
-                 // [START_EXCLUDE]
-//                mAuthorView.setText(user.username);
-                 // [END_EXCLUDE]
              }
 
              @Override
              public void onCancelled(DatabaseError databaseError) {
-                 // Getting Post failed, log a message
                  Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                 // [START_EXCLUDE]
-                 Toast.makeText(History.this, "Failed to load post.",
-                         Toast.LENGTH_SHORT).show();
-                 // [END_EXCLUDE]
              }
          };
 
          mUserReference.addValueEventListener(postListener);
-         // [END post_value_event_listener]
 
-         // Keep copy of post listener so we can remove it when app stops
          mUserListener = postListener;
-//         diseases=new ArrayList<Disease>();
-//         diseases.add(new Disease("1","123"));
 
          adapter = new RVAdapter(diseases);
          rv.setAdapter(adapter);
@@ -127,10 +113,6 @@ public class History extends AppCompatActivity {
 
      }
 
-//    private void initializeAdapter(){
-//        RVAdapter adapter = new RVAdapter(diseases);
-//        rv.setAdapter(adapter);
-//    }
 @Override
 public boolean onCreateOptionsMenu(Menu menu) {
     getMenuInflater().inflate(R.menu.menu_activity_main, menu);
