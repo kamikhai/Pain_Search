@@ -48,6 +48,14 @@ public class MainFragment extends Fragment {
                 startActivity(intt);
             }
         });
+        CardView card4 = (CardView)v.findViewById(R.id.connect_card);
+        card4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intt = new Intent(getActivity(),ConnectActivity.class);
+                startActivity(intt);
+            }
+        });
         return v;
     }
 

@@ -97,7 +97,10 @@
             android:name=".Info"
             android:label="О приложении"
             android:theme="@style/AppRed" />
-        <activity android:name=".change_img"></activity>
+        <activity android:name=".change_img" />
+        <activity android:name=".ConnectActivity"
+            android:label="Связаться с нами"
+            android:theme="@style/Connect"></activity>
     </application>
 
 </manifest>
