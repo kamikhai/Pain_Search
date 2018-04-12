@@ -143,7 +143,9 @@ public boolean onCreateOptionsMenu(Menu menu) {
                 this.finish();
                 return true;
             case R.id.action_remove:
-                //сюда что, что должна сделать кнопка
+               mUserReference.setValue(null);
+                im.setVisibility(View.VISIBLE);
+                tx.setVisibility(View.VISIBLE);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
