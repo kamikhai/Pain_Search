@@ -213,7 +213,13 @@ public class StomachWoman extends AppCompatActivity implements View.OnClickListe
         String s="Возможные причины:\n ";
         String k=Integer.toString(m);
         Log.d("myLog", k+" max");
-        for(byte i=0;i<6;i++) if (count[i]==m)  {s+=disease[i]+" "; count[i]=-1;}
+        for(byte i=0;i<6;i++) if (count[i]==m)  {s+=disease[i]+", "; count[i]=-1;}
+
+        //Удаление запятой
+        StringBuffer stringBuffer = new StringBuffer(s);
+        stringBuffer.delete(stringBuffer.length()-2,stringBuffer.length()-1);
+        s = stringBuffer.toString();
+
         tx.setText(s);
         tx.setTextSize(30);
         String s2="Советуем вам обратиться к терапевту.\n ";
