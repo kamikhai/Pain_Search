@@ -82,14 +82,25 @@
             android:label="Стопы"
             android:theme="@style/AppRed" />
         <activity
+            android:name=".ActivityNoshpa"
+            android:label="Но-шпа"
+            android:theme="@style/AppRed" />
+        <activity
+            android:name=".ActivityNurofen"
+            android:label="Нурофен"
+            android:theme="@style/AppRed" />
+        <activity
+            android:name=".ActivityVoltaren"
+            android:label="Вольтарен"
+            android:theme="@style/AppRed" />
+        <activity
             android:name=".Info"
             android:label="О приложении"
             android:theme="@style/AppRed" />
         <activity android:name=".change_img" />
-        <activity
-            android:name=".ConnectActivity"
+        <activity android:name=".ConnectActivity"
             android:label="Связаться с нами"
-            android:theme="@style/Connect" />
+            android:theme="@style/Connect"></activity>
     </application>
 
 </manifest>

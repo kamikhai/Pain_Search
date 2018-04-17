@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.rrota.pain_s.ScrollingActivityDrug"
+    tools:showIn="@layout/activity_scrolling_drug">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+
+            android:layout_width="340dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:layout_width="126dp"
+                android:layout_height="77dp"
+                android:layout_margin="33dp"
+                android:src="@drawable/noshpa"/>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="34dp"
+                android:layout_gravity="right"
+                android:layout_margin="20dp"
+                android:text="@string/Noshpa"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
+                android:layout_marginVertical="55dp"
+                android:text="@string/price_115"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/noshpa"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="200dp"
+                android:background="@color/colorButton"
+                android:text="@string/Podrobnee" />
+
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+
+            android:layout_width="340dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:layout_width="126dp"
+                android:layout_height="77dp"
+                android:layout_margin="33dp"
+                android:src="@drawable/nurofen"/>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="34dp"
+                android:layout_gravity="right"
+                android:layout_margin="20dp"
+                android:text="@string/nurofen"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
+                android:layout_marginVertical="55dp"
+                android:text="@string/price_230"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/nurofen"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="200dp"
+                android:background="@color/colorButton"
+                android:text="@string/Podrobnee" />
+
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+
+            android:layout_width="340dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp">
+
+
+            <ImageView
+                android:layout_width="126dp"
+                android:layout_height="77dp"
+                android:layout_margin="33dp"
+                android:src="@drawable/voltaren"/>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="34dp"
+                android:layout_gravity="right"
+                android:layout_margin="20dp"
+                android:text="@string/voltaren"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
+                android:layout_marginVertical="55dp"
+                android:text="@string/price_212"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/voltaren"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="200dp"
+                android:background="@color/colorButton"
+                android:text="@string/Podrobnee" />
+
+
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
