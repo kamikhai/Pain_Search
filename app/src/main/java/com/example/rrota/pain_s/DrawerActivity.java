@@ -159,7 +159,7 @@ private void displaySelectedScreen(int id, MainFragment mainFragment){
             fragment = new PainFragment();
             break;
         case R.id.drug:
-            fragment = new FragmentDrug();
+            //fragment = new FragmentDrug();
             break;
         case R.id.off:
             FirebaseAuth.getInstance().signOut();
