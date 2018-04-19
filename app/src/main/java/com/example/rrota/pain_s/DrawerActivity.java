@@ -136,6 +136,7 @@ public class DrawerActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         displaySelectedScreen(R.id.main, new MainFragment());
 
+
     }
 
 
@@ -159,7 +160,8 @@ private void displaySelectedScreen(int id, MainFragment mainFragment){
             fragment = new PainFragment();
             break;
         case R.id.drug:
-            fragment = new FragmentDrug();
+            startActivity(new Intent(this, Drugs.class));
+            finish();
             break;
         case R.id.off:
             FirebaseAuth.getInstance().signOut();
