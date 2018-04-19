@@ -41,7 +41,7 @@ import java.util.Locale;
  * Created by EmilLatypov on 6.01.2018.
  * Активити с фоновой анимацией
  */
-
+//TODO Сдвиг клавиатуры при наборе текста
 public class Index extends BaseActivity implements View.OnClickListener {
     private WebView webView;
     private static final String TAG = "SignInActivity";
@@ -60,10 +60,8 @@ public class Index extends BaseActivity implements View.OnClickListener {
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl("file:///android_asset/www/index.html");
-//        TextView name = (TextView)findViewById(R.id.textView3);
         TextView txt = (TextView)findViewById(R.id.link_signup);
         txt.setOnClickListener(this);
-
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
