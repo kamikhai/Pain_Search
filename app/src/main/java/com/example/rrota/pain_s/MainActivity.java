@@ -136,7 +136,7 @@ public class MainActivity  extends BaseActivity implements View.OnClickListener 
         finish();
     }
     private void writeNewUser(String userId, String surname, String name, String email) {
-        User user = new User(surname,name, email,2);
+        User user = new User(surname,name, email,1);
 
         mDatabase.child("users").child(userId).setValue(user);
     }
