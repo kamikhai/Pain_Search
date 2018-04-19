@@ -29,6 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
  * Created by EmilLatypov on 18.02.2018.
  * Активити с регистрацией
  */
+//TODO Сдвиг клавиатуры при наборе текста
 public class MainActivity  extends BaseActivity implements View.OnClickListener {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;

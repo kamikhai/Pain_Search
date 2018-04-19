@@ -8,8 +8,8 @@ import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-
-public class ConnectActivity extends AppCompatActivity {
+//TODO Прелоадер, чтоб пользователь понимал, что страница прогружается
+public class ConnectActivity extends BaseActivity {
     private WebView webView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

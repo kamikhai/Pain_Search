@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.IOException;
-
+//TODO Кнопка назад в верхней "шапке"
 public class Analog extends AppCompatActivity {
 
     TextView Name,Price,Subs,DrName,DrPrice;
