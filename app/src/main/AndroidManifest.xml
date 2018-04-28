@@ -90,9 +90,16 @@
             android:label="Связаться с нами"
             android:theme="@style/Connect"></activity>
 
-        <activity android:name=".Drugs"
-            android:label="Выберите лекарство"
-            android:theme="@style/AppRed">
+        <activity android:name=".Drugs" android:launchMode="singleTop" android:label="Выберите лекарство"
+            android:theme="@style/AppRed" >
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
 
         <activity android:name=".Analog"
