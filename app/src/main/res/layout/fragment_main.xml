@@ -49,7 +49,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Профиль"
+                        android:text="@string/profile"
                         android:textStyle="bold" />
 
                     <View
@@ -63,7 +63,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="Изменить свои данные"
+                        android:text="@string/changeProfile"
                         android:textColor="@android:color/darker_gray" />
 
                 </LinearLayout>
@@ -94,8 +94,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="История болезней"
-                        android:textStyle="bold" />
+                        android:text="@string/historyCard"
+                        android:textStyle="bold"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -108,7 +108,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="Посмотреть прошлые болезни"
+                        android:text="@string/seeLast"
                         android:textColor="@android:color/darker_gray" />
 
                 </LinearLayout>
@@ -149,7 +149,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="О приложении"
+                        android:text="@string/about"
                         android:textStyle="bold" />
 
                     <View
@@ -186,7 +186,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Связаться с нами"
+                        android:text="@string/connect"
                         android:textStyle="bold" />
 
                     <View

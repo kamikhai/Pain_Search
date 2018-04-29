@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     tools:context="com.example.rrota.pain_s.Info">
 
     <android.support.constraint.ConstraintLayout
@@ -39,7 +40,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="Версия 1.0"
+            android:text="@string/version"
             android:textColor="@color/black_overlay"
             app:layout_constraintBottom_toTopOf="@+id/textView5"
             app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:text="Pain Search"
+            android:text="@string/namApp"
             android:textAlignment="center"
             android:textColor="#f03c3c"
             android:textSize="30sp"
@@ -72,7 +73,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:padding="20dp"
-            android:text="В нашем приложении Вы сможете найти информацию о лекартсвах и их более дешевых аналогах, узнать возможные причины вашей боли, а также получить информацию о том, к какому врачу вы можете обратиться."
+            android:text="@string/info"
             android:textColor="#000"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -9,8 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
-
-class RVAdapter  extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> {
+/**
+ * Created by KamillaKhairullina
+ * Адаптер для RecyclerView
+ */
+class RVAdapter extends RecyclerView.Adapter < RVAdapter.PersonViewHolder > {
 
     public static class PersonViewHolder extends RecyclerView.ViewHolder {
 
@@ -21,16 +24,16 @@ class RVAdapter  extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> {
 
         PersonViewHolder(View itemView) {
             super(itemView);
-            cv = (CardView)itemView.findViewById(R.id.cv);
-            Date = (TextView)itemView.findViewById(R.id.date);
-            Disease = (TextView)itemView.findViewById(R.id.disease);
-            Doctors = (TextView)itemView.findViewById(R.id.doctors);
+            cv = (CardView) itemView.findViewById(R.id.cv);
+            Date = (TextView) itemView.findViewById(R.id.date);
+            Disease = (TextView) itemView.findViewById(R.id.disease);
+            Doctors = (TextView) itemView.findViewById(R.id.doctors);
         }
     }
 
-    List<Disease> diseases;
+    List < Disease > diseases;
 
-    RVAdapter(List<Disease> diseases){
+    RVAdapter(List < Disease > diseases) {
         this.diseases = diseases;
     }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/lightgray"
     tools:context="com.example.rrota.pain_s.Profile">
 
 
@@ -48,7 +48,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
-                android:text="Изменить"
+                android:text="@string/change"
                 android:textColor="#fff"
                 android:textSize="17dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -88,7 +88,7 @@
                         android:backgroundTint="@color/black"
                         android:hint="@string/name"
                         android:inputType="textPersonName"
-                        android:textColor="@color/green" />
+                        android:textColor="@color/black_overlay" />
 
 
                 </android.support.design.widget.TextInputLayout>
@@ -98,7 +98,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Сохранить"
+                    android:text="@string/save"
                     android:textSize="10sp"/>
             </LinearLayout>
 
@@ -117,8 +117,9 @@
                     android:layout_marginLeft="18dp"
                     android:layout_marginTop="8dp"
                     android:layout_weight="2"
-                    android:text="Имя"
+                    android:text="@string/name"
                     android:textSize="15sp"
+                    android:textColor="@color/black_overlay"
                     android:visibility="visible"/>
 
                 <TextView
@@ -132,6 +133,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_weight="6"
                     android:textSize="20sp"
+                    android:textColor="@color/black_overlay"
                     android:visibility="visible"/>
 
                 <ImageButton
@@ -181,9 +183,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:backgroundTint="@color/black"
-                        android:hint="Фамилия"
-                        android:inputType="textPersonName"
-                        android:textColor="@color/green" />
+                        android:hint="@string/surname"
+                        android:inputType="textPersonName" />
 
 
                 </android.support.design.widget.TextInputLayout>
@@ -193,7 +194,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Сохранить"
+                    android:text="@string/save"
                     android:textSize="10sp"/>
             </LinearLayout>
 
@@ -212,7 +213,8 @@
                     android:layout_marginLeft="18dp"
                     android:layout_marginTop="8dp"
                     android:layout_weight="2"
-                    android:text="Фамилия"
+                    android:textColor="@color/black_overlay"
+                    android:text="@string/surname"
                     android:textSize="15sp"
                     android:visibility="visible"/>
 
@@ -227,6 +229,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_weight="6"
                     android:textSize="20sp"
+                    android:textColor="@color/black_overlay"
                     android:visibility="visible"></TextView>
 
                 <ImageButton

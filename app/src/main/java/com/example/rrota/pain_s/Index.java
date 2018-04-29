@@ -38,10 +38,9 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * Created by EmilLatypov on 6.01.2018.
- * Активити с фоновой анимацией
+ * Created by EmilLatypov
+ * Активити входа с фоновой анимацией
  */
-//TODO Сдвиг клавиатуры при наборе текста
 public class Index extends BaseActivity implements View.OnClickListener {
     private WebView webView;
     private static final String TAG = "SignInActivity";
@@ -52,39 +51,53 @@ public class Index extends BaseActivity implements View.OnClickListener {
     private EditText mPasswordField;
     private AppCompatButton mSignInButton;
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Создать/скрыть WebView в зависимости от версии
         setContentView(R.layout.activity_index);
         webView = (WebView) findViewById(R.id.webView);
-        webView.setWebViewClient(new WebViewClient());
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("file:///android_asset/www/index.html");
-        TextView txt = (TextView)findViewById(R.id.link_signup);
+        if (android.os.Build.VERSION.SDK_INT >= 19) {
+            webView.setWebViewClient(new WebViewClient());
+            WebSettings webSettings = webView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webView.loadUrl("file:///android_asset/www/index.html");
+        } else
+            webView.setVisibility(View.GONE);
+
+
+        TextView txt = (TextView) findViewById(R.id.link_signup);
         txt.setOnClickListener(this);
+
+        //Обращение к бд
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
+        //Поиск элементов разметки
         mEmailField = findViewById(R.id.input_email);
         mPasswordField = findViewById(R.id.input_password);
         mSignInButton = findViewById(R.id.btn_login);
-
         mSignInButton.setOnClickListener(this);
     }
+
+    //Метод для Входа
     private void signIn() {
         Log.d(TAG, "signIn");
         if (!validateForm()) {
             return;
         }
 
-        showProgressDialog();
+        showProgressDialog(); //Включение ProgressDialog до завершения обработки данных
+
+        //Получение данных из EditText
         String email = mEmailField.getText().toString();
         String password = mPasswordField.getText().toString();
 
+        //Проверка возможности входа в приложение
         mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(this, new OnCompleteListener < AuthResult > () {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                    public void onComplete(@NonNull Task < AuthResult > task) {
                         Log.d(TAG, "signIn:onComplete:" + task.isSuccessful());
                         hideProgressDialog();
 
@@ -97,16 +110,16 @@ public class Index extends BaseActivity implements View.OnClickListener {
                     }
                 });
     }
+
+    //Вызывается при удачной авторизации
     private void onAuthSuccess(FirebaseUser user) {
-
-
-        // Go to MainActivity
         startActivity(new Intent(Index.this, DrawerActivity.class));
         finish();
     }
 
 
 
+    //Проверка на корректность введенных данных
     private boolean validateForm() {
         boolean result = true;
         if (TextUtils.isEmpty(mEmailField.getText().toString())) {
@@ -127,6 +140,7 @@ public class Index extends BaseActivity implements View.OnClickListener {
     }
 
 
+    //Обработка нажатия кнопок
     @Override
     public void onClick(View v) {
         int i = v.getId();
@@ -137,6 +151,3 @@ public class Index extends BaseActivity implements View.OnClickListener {
         }
     }
 }
-
-
-

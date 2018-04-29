@@ -11,7 +11,10 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-
+/**
+ * Created by EmilLatypov
+ * Активити выбора пола
+ */
 
 public class FragmentPain extends Fragment {
 
@@ -29,4 +32,3 @@ public class FragmentPain extends Fragment {
 
 
 }
-

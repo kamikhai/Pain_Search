@@ -4,7 +4,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-
+/**
+ * Created by EmilLatypov
+ * Информация
+ */
 public class Info extends AppCompatActivity {
 
     @Override
@@ -14,7 +17,6 @@ public class Info extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
-
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

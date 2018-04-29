@@ -4,7 +4,10 @@ import com.google.firebase.database.Exclude;
 
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * Created by KamillaKhairullina
+ * Класс пользователя
+ */
 public class User {
     public String usersurname;
     public String username;
@@ -12,7 +15,7 @@ public class User {
     public int photo;
 
     public User() {
-        // Default constructor required for calls to DataSnapshot.getValue(User.class)
+        //Стандартный конструктор, необходимый для DataSnapshot.getValue(User.class)
     }
 
     public User(String usersurname, String username, String email, int photo) {
@@ -23,8 +26,8 @@ public class User {
     }
 
     @Exclude
-    public Map<String, Object> toMap() {
-        HashMap<String, Object> result = new HashMap<>();
+    public Map < String, Object > toMap() {
+        HashMap < String, Object > result = new HashMap < > ();
         result.put("usersurname", usersurname);
         result.put("username", username);
         result.put("email", email);

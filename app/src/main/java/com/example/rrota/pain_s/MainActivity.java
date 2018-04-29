@@ -26,11 +26,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 /**
- * Created by EmilLatypov on 18.02.2018.
+ * Created by EmilLatypov
  * Активити с регистрацией
  */
-//TODO Сдвиг клавиатуры при наборе текста
-public class MainActivity  extends BaseActivity implements View.OnClickListener {
+
+public class MainActivity extends BaseActivity implements View.OnClickListener {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
     private static final String TAG = "SignInActivity";
@@ -38,7 +38,6 @@ public class MainActivity  extends BaseActivity implements View.OnClickListener 
     private EditText mEmailField;
     private EditText mPasswordField;
     private EditText mNameField;
-//    private AppCompatButton mSignInButton;
     private Button mSignUpButton;
     private TextInputLayout mTextInputLayout;
     private static final int MIN_TEXT_LENGTH = 6;
@@ -50,37 +49,36 @@ public class MainActivity  extends BaseActivity implements View.OnClickListener 
         txt.setOnClickListener(this);
 
 
+        //Обращение к бд
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
-        // Views
-        mSurnameField=findViewById(R.id.input_surname);
-        mNameField=findViewById(R.id.input_name);
+        //Поиск элементов разметки
+        mSurnameField = findViewById(R.id.input_surname);
+        mNameField = findViewById(R.id.input_name);
         mEmailField = findViewById(R.id.input_email);
         mPasswordField = findViewById(R.id.input_password);
         mSignUpButton = findViewById(R.id.btn_signup);
         mTextInputLayout = (TextInputLayout) findViewById(R.id.textInputLayout);
-
-
         mSignUpButton.setOnClickListener(this);
-
-
     }
 
+    //Регистрация
     private void signUp() {
         Log.d(TAG, "signUp");
         if (!validateForm()) {
             return;
         }
 
-        showProgressDialog();
+        showProgressDialog(); //Включение ProgressDialog до завершения обработки данных
         String email = mEmailField.getText().toString();
         String password = mPasswordField.getText().toString();
 
+        //Попытка создания нового пользователя
         mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(this, new OnCompleteListener < AuthResult > () {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                    public void onComplete(@NonNull Task < AuthResult > task) {
                         Log.d(TAG, "createUser:onComplete:" + task.isSuccessful());
                         hideProgressDialog();
 
@@ -94,6 +92,7 @@ public class MainActivity  extends BaseActivity implements View.OnClickListener 
                 });
     }
 
+    //Проверка корректности введенных данных
     private boolean validateForm() {
         boolean result = true;
 
@@ -127,6 +126,7 @@ public class MainActivity  extends BaseActivity implements View.OnClickListener 
         return result;
     }
 
+    //Метод, вызываемый при удачном создании пользователя
     private void onAuthSuccess(FirebaseUser user) {
         String username = mNameField.getText().toString();
         String usersurname = mSurnameField.getText().toString();
@@ -136,12 +136,15 @@ public class MainActivity  extends BaseActivity implements View.OnClickListener 
         startActivity(new Intent(MainActivity.this, DrawerActivity.class));
         finish();
     }
+
+    //Создание нового пользователя и сохранение его данных в бд
     private void writeNewUser(String userId, String surname, String name, String email) {
-        User user = new User(surname,name, email,1);
+        User user = new User(surname, name, email, 1);
 
         mDatabase.child("users").child(userId).setValue(user);
     }
 
+    //Обраотка нажатия кнопок
     @Override
     public void onClick(View v) {
         int i = v.getId();
@@ -152,4 +155,3 @@ public class MainActivity  extends BaseActivity implements View.OnClickListener 
         }
     }
 }
-

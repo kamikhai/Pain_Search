@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Emil"
+        android:text="@string/name"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="20sp" />
@@ -31,7 +31,7 @@
         android:id="@+id/nav_user_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="exp@mail.ru"
+        android:text="@string/email"
         android:textAlignment="center"
         android:textSize="14sp" />
 

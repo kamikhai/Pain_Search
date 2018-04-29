@@ -7,13 +7,18 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-
+/**
+ * Created by KamillaKhairullina
+ * Активити Женщина
+ */
 public class MainWomanActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_woman);
+
+        //Поиск элементов разметки
         ImageButton bh = (ImageButton) findViewById(R.id.wh);
         ImageButton bn = (ImageButton) findViewById(R.id.wn);
         ImageButton bs = (ImageButton) findViewById(R.id.ws);
@@ -45,6 +50,8 @@ public class MainWomanActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
     }
+
+    //Обработка нажатия кнопок
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -55,6 +62,8 @@ public class MainWomanActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    //Обработка нажатия на различные части тела
     private final View.OnClickListener onClickListener = new View.OnClickListener() {
 
         @Override
@@ -66,51 +75,51 @@ public class MainWomanActivity extends AppCompatActivity {
                     startActivity(ih);
                     break;
                 case R.id.wn:
-                     ih = new Intent(MainWomanActivity.this, Neck.class);
+                    ih = new Intent(MainWomanActivity.this, Neck.class);
                     startActivity(ih);
                     break;
                 case R.id.wb:
-                     ih = new Intent(MainWomanActivity.this, Chest.class);
+                    ih = new Intent(MainWomanActivity.this, Chest.class);
                     startActivity(ih);
                     break;
                 case R.id.wls:
-                     ih = new Intent(MainWomanActivity.this, Arms.class);
+                    ih = new Intent(MainWomanActivity.this, Arms.class);
                     startActivity(ih);
                     break;
                 case R.id.wrs:
-                     ih = new Intent(MainWomanActivity.this, Arms.class);
+                    ih = new Intent(MainWomanActivity.this, Arms.class);
                     startActivity(ih);
                     break;
                 case R.id.wla:
-                     ih = new Intent(MainWomanActivity.this, Arms.class);
+                    ih = new Intent(MainWomanActivity.this, Arms.class);
                     startActivity(ih);
                     break;
                 case R.id.wra:
-                     ih = new Intent(MainWomanActivity.this, Arms.class);
+                    ih = new Intent(MainWomanActivity.this, Arms.class);
                     startActivity(ih);
                     break;
                 case R.id.ws:
-                     ih = new Intent(MainWomanActivity.this, StomachWoman.class);
+                    ih = new Intent(MainWomanActivity.this, StomachWoman.class);
                     startActivity(ih);
                     break;
                 case R.id.wlf:
-                     ih = new Intent(MainWomanActivity.this, Hands.class);
+                    ih = new Intent(MainWomanActivity.this, Hands.class);
                     startActivity(ih);
                     break;
                 case R.id.wrf:
-                     ih = new Intent(MainWomanActivity.this, Hands.class);
+                    ih = new Intent(MainWomanActivity.this, Hands.class);
                     startActivity(ih);
                     break;
                 case R.id.wbb:
-                     ih = new Intent(MainWomanActivity.this, Thigs.class);
+                    ih = new Intent(MainWomanActivity.this, Thigs.class);
                     startActivity(ih);
                     break;
                 case R.id.wl:
-                     ih = new Intent(MainWomanActivity.this, Shank.class);
+                    ih = new Intent(MainWomanActivity.this, Shank.class);
                     startActivity(ih);
                     break;
                 case R.id.wf:
-                     ih = new Intent(MainWomanActivity.this, Feet.class);
+                    ih = new Intent(MainWomanActivity.this, Feet.class);
                     startActivity(ih);
                     break;
 

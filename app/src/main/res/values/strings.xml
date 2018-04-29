@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="choose">Выберите свой аватар</string>
     <string name="app_name">Pain Search</string>
     <string name="drawer_item_pain">Что болит?</string>
     <string name="drawer_item_home">Главная</string>
@@ -24,43 +25,54 @@
     <string name="btnSave">Сохранить</string>
 
     <string name="name">Имя</string>
-
-    <string name="surname">Фамилия</string>
-
+    <string name="namApp">Pain Search</string>
+    <string name="signIn">Вход</string>
+    <string name="Registration">Регистрация</string>
     <string name="email">Почта</string>
-
     <string name="password">Пароль</string>
-
+    <string name="info">В нашем приложении Вы сможете найти информацию о лекартсвах и их более дешевых аналогах, узнать возможные причины вашей боли, а также получить информацию о том, к какому врачу вы можете обратиться.</string>
+    <string name="version">Версия 1.0</string>
+    <string name="surname">Фамилия</string>
+    <string name="toRegist">Зарегистрироваться</string>
+    <string name="alreadyHave">Уже есть аккаунт</string>
+    <string name="change">Изменить</string>
     <string name="save">Сохранить</string>
+    <string name="skip">пропустить</string>
+    <string name="next">далее</string>
+    <string name="deist">Действующее вещество:</string>
+    <string name="drug">Лекарство:</string>
+    <string name="title">Название</string>
+    <string name="price">Цена</string>
+    <string name="analog">Аналог:</string>
+    <string name="consultation">Необходима консультация специалиста</string>
+    <string name="profile">Профиль</string>
+    <string name="changeProfile">Изменить свои данные</string>
+    <string name="historyCard">История болезни</string>
+    <string name="seeLast">Посмотреть прошлые результаты теста</string>
+    <string name="about">О приложении</string>
+    <string name="connect">Связаться с нами</string>
+    <string name="question">Вопрос</string>
+    <string name="result">Результат</string>
+    <string name="answer">Ответ</string>
+    <string name="wel1">Онлайн врач</string>
+    <string name="wel11">Находите решения своих проблем со здоровьем</string>
+    <string name="wel2">Аналоги лекарств</string>
+    <string name="wel22">Ищите более дешевые аналоги популярных лекарств</string>
+    <string name="wel3">История болезни</string>
+    <string name="wel33">сохраняйте ваши результаты в журнал и просматривайте их в любое время</string>
+    <string name="search">Поиск...</string>
+    <string name="where">Где у Вас болит?</string>
+    <string name="head">Голова</string>
+    <string name="thigs">Бёдра</string>
+    <string name="Stomach">Живот</string>
+    <string name="chest">Грудная клетка</string>
+    <string name="arms">Руки</string>
+    <string name="shank">Голени</string>
+    <string name="neck">Шея</string>
+    <string name="hands">Кисти</string>
+    <string name="feet">Стопы</string>
+    <string name="information">О приложении</string>
+    <string name="con">Связаться с нами</string>
 
 
-    <string name="Podrobnee">Подробнее</string>
-    <string name="Noshpa">Но-Шпа</string>
-    <string name="price_115">115 ₽</string>
-    <string name="nurofen">Нурофен</string>
-    <string name="price_230">230 ₽</string>
-    <string name="voltaren">Вольтарен</string>
-    <string name="price_212">212 ₽</string>
-    <string name="title_activity_nurofen">ActivityNurofen</string>
-    <string name="title_activity_noshpa">ActivityNoshpa</string>
-    <string name="title_activity_voltaren">ActivityVoltaren</string>
-    <string name="analogvol" formatted="false">"Диклоназ гель 5%,30 г - от 80 рублей \n\n"
-        "Ортофен мазь 2%, 30 г - от 40 рублей \n\n"
-        "Диклофенак - от 13 рублей \n\n"</string>
-    <string name="analognur" formatted="false">
-        "Ибупрофен (400 мг, таблетки № 30) – от 80 рублей \n\n"
-        "Миг 400 (таблетки № 20) – от 135 рублей \n\n"
-        "Максиколд (суспензия 200 г) – от 150 рублей \n\n"
-        "Ибуклин (табл. 400 мг + 325 мг № 20) – от 110 рублей \n\n"
-        "Цефекон Д (суппозитории 100 мг №10) – от 40 рублей \n\n"
-        "Парацетамол (таблетки 200 мг № 10) – от 4 рубля \n\n"
-        "Эффералган (сироп 90 мл) – от 80 рублей \n\n"
-</string>
-    <string name="analognos" formatted="false">
-        "Дротаверин (таблетки 40 мг. 20 шт.) - Цена от 16 рублей \n\n"
-        "Папаверина гидрохлорид МС (таблетки 40 мг. 10 шт.) - Цена от 9 рублей  \n\n"
-        "Спаозмонет (таблетки 40 мг. 20 шт.) - Цена от 72 рублей \n\n"
-        "Спазмол (таблетки 40 мг. 20 шт.) - Цена от 29 рублей  \n\n"
-    </string>
-    <string name="analog">АНАЛОГИ:</string>
 </resources>
