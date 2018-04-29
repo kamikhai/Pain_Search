@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/questions_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:orientation="vertical">
 
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="470dp">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/white"
             android:orientation="vertical">
 
@@ -40,6 +47,7 @@
                 android:textColor="#000"
                 android:textSize="20dp" />
 
+
             <CheckBox
                 android:id="@+id/checkBox3"
                 android:layout_width="match_parent"
@@ -50,7 +58,6 @@
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:background="@drawable/shadow"
-                android:buttonTint="#000"
                 android:checked="false"
                 android:paddingBottom="15dp"
                 android:paddingLeft="10dp"
@@ -58,7 +65,8 @@
                 android:paddingTop="15dp"
                 android:text="CheckBox"
                 android:textColor="#000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:theme="@style/MyCheckBox" />
 
             <CheckBox
                 android:id="@+id/checkBox2"
@@ -69,7 +77,6 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shadow"
-                android:buttonTint="#000"
                 android:checked="false"
                 android:paddingBottom="15dp"
                 android:paddingLeft="10dp"
@@ -77,7 +84,8 @@
                 android:paddingTop="15dp"
                 android:text="CheckBox"
                 android:textColor="#000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:theme="@style/MyCheckBox" />
 
             <CheckBox
                 android:id="@+id/checkBox4"
@@ -88,7 +96,6 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shadow"
-                android:buttonTint="#000"
                 android:checked="false"
                 android:paddingBottom="15dp"
                 android:paddingLeft="10dp"
@@ -96,7 +103,8 @@
                 android:paddingTop="15dp"
                 android:text="CheckBox"
                 android:textColor="#000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:theme="@style/MyCheckBox" />
 
             <CheckBox
                 android:id="@+id/checkBox5"
@@ -107,7 +115,6 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shadow"
-                android:buttonTint="#000"
                 android:checked="false"
                 android:paddingBottom="15dp"
                 android:paddingLeft="10dp"
@@ -116,6 +123,7 @@
                 android:text="CheckBox"
                 android:textColor="#000"
                 android:textSize="18sp"
+                android:theme="@style/MyCheckBox"
                 android:visibility="visible" />
 
             <CheckBox
@@ -127,7 +135,6 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shadow"
-                android:buttonTint="#000"
                 android:checked="false"
                 android:paddingBottom="15dp"
                 android:paddingLeft="10dp"
@@ -135,7 +142,8 @@
                 android:paddingTop="15dp"
                 android:text="CheckBox"
                 android:textColor="#000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:theme="@style/MyCheckBox" />
 
             <CheckBox
                 android:id="@+id/checkBox7"
@@ -146,7 +154,6 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shadow"
-                android:buttonTint="#000"
                 android:checked="false"
                 android:paddingBottom="15dp"
                 android:paddingLeft="10dp"
@@ -154,7 +161,8 @@
                 android:paddingTop="15dp"
                 android:text="CheckBox"
                 android:textColor="#000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:theme="@style/MyCheckBox" />
 
             <CheckBox
                 android:id="@+id/checkBox8"
@@ -165,7 +173,6 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shadow"
-                android:buttonTint="#000"
                 android:checked="false"
                 android:paddingBottom="15dp"
                 android:paddingLeft="10dp"
@@ -173,7 +180,8 @@
                 android:paddingTop="15dp"
                 android:text="CheckBox"
                 android:textColor="#000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:theme="@style/MyCheckBox" />
 
             <CheckBox
                 android:id="@+id/checkBox9"
@@ -184,7 +192,6 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shadow"
-                android:buttonTint="#000"
                 android:checked="false"
                 android:paddingBottom="15dp"
                 android:paddingLeft="10dp"
@@ -192,7 +199,8 @@
                 android:paddingTop="15dp"
                 android:text="CheckBox"
                 android:textColor="#000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:theme="@style/MyCheckBox" />
 
             <CheckBox
                 android:id="@+id/checkBox10"
@@ -203,7 +211,6 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shadow"
-                android:buttonTint="#000"
                 android:checked="false"
                 android:paddingBottom="15dp"
                 android:paddingLeft="10dp"
@@ -211,38 +218,35 @@
                 android:paddingTop="15dp"
                 android:text="CheckBox"
                 android:textColor="#000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:theme="@style/MyCheckBox" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="3"
+                android:layout_x="80dp"
+                android:layout_y="417dp"
+                android:background="#e01421"
+                android:padding="12dp"
+                android:text="Далее"
+                android:textAlignment="center"
+                android:textColor="#fff" />
 
 
         </LinearLayout>
 
     </ScrollView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_weight="1"
-        android:background="#fff"
-        android:gravity="bottom"
-        android:orientation="vertical">
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="3"
-            android:layout_x="80dp"
-            android:layout_y="417dp"
-            android:background="#e01421"
-            android:padding="12dp"
-            android:text="Далее"
-            android:textAlignment="center"
-            android:textColor="#fff" />
-    </LinearLayout>
-</LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>
 

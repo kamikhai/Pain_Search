@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="MyDialogStyle1" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">@android:color/holo_blue_dark</item>
+        <item name="android:background">@color/white</item>
+        <item name="colorAccent">@color/light_blue</item>
+    </style>
+
+    <style name="MyDialogStyle2" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <item name="android:background">@color/white</item>
+        <item name="colorAccent">@color/colorActivityTwo</item>
+    </style>
+
+    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+
+        <item name="colorControlNormal">@color/black_overlay</item>
+        <item name="colorControlActivated">@color/colorActivityTwo</item>
+    </style>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@android:color/holo_red_dark</item>

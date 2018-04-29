@@ -11,7 +11,11 @@ class BaseActivity extends AppCompatActivity {
 
     public void showProgressDialog() {
         if (mProgressDialog == null) {
-            mProgressDialog = new ProgressDialog(this);
+            if (android.os.Build.VERSION.SDK_INT >= 23) {
+                mProgressDialog=new ProgressDialog(this,R.style.MyDialogStyle2);
+            }
+            else
+                mProgressDialog=new ProgressDialog(this);
             mProgressDialog.setCancelable(false);
             mProgressDialog.setMessage("Загрузка...");
         }

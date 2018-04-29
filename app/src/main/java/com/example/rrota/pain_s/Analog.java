@@ -6,13 +6,15 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.IOException;
-//TODO Кнопка назад в верхней "шапке"
 public class Analog extends AppCompatActivity {
 
     TextView Name,Price,Subs,DrName,DrPrice;
@@ -26,6 +28,10 @@ public class Analog extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.analog);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         Name=findViewById(R.id.an_name);
         Price=findViewById(R.id.an_price);
@@ -68,28 +74,16 @@ public class Analog extends AppCompatActivity {
         userCursor.close();
 
     }
-    public void save(View view){
-        ContentValues cv = new ContentValues();
-//        cv.put(DatabaseHelper.COLUMN_NAME, nameBox.getText().toString());
-//        cv.put(DatabaseHelper.COLUMN_YEAR, Integer.parseInt(yearBox.getText().toString()));
 
-        if (userId > 0) {
-            mDb.update(DatabaseHelper.TABLE, cv, DatabaseHelper.COLUMN_ID + "=" + String.valueOf(userId), null);
-        } else {
-            mDb.insert(DatabaseHelper.TABLE, null, cv);
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        goHome();
-    }
-    public void delete(View view){
-        mDb.delete(DatabaseHelper.TABLE, "_id = ?", new String[]{String.valueOf(userId)});
-        goHome();
-    }
-    private void goHome(){
-        // закрываем подключение
-        mDb.close();
-        // переход к главной activity
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(intent);
     }
 }

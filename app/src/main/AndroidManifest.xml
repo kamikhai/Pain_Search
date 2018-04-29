@@ -9,22 +9,25 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme_to_index">
-        <activity android:name=".Index" />
+        <activity android:name=".Index"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".DrawerActivity"
             android:label="@string/title_activity_drawer"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+        </activity>
         <activity
             android:name=".MainWomanActivity"
-            android:label="@string/drawer_item_woman"
+            android:label="Где у Вас болит?"
             android:theme="@style/AppRed" />
         <activity
             android:name=".MainManActivity"
-            android:label="@string/drawer_item_man"
+            android:label="Где у Вас болит?"
             android:theme="@style/AppRed" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme_to_index" />
+            android:theme="@style/Theme_to_index"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -86,6 +89,7 @@
             android:label="О приложении"
             android:theme="@style/AppRed" />
         <activity android:name=".change_img" />
+
         <activity android:name=".ConnectActivity"
             android:label="Связаться с нами"
             android:theme="@style/Connect"></activity>
