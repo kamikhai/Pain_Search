@@ -27,10 +27,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 /**
- * Created by EmilLatypov on 16.01.2018.
- * Активити которое выдвигает боковое меню
+ * Created by EmilLatypov
+ * Работа бокового меню
  */
 public class DrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -43,26 +42,32 @@ public class DrawerActivity extends AppCompatActivity
     private ImageView photo;
     private int ph;
 
+    //Получение данных пользователя
     FirebaseUser user = mAuth.getInstance().getCurrentUser();
     private static final String TAG = "DrawerActivity";
 
 
+    //Создание бокового меню
     @Override
     public boolean onCreatePanelMenu(int featureId, Menu menu) {
-        photo=findViewById(R.id.imageView);
+        photo = findViewById(R.id.imageView);
 
+        //Обращение к Firebase
         mUserReference = FirebaseDatabase.getInstance().getReference()
                 .child("users").child(user.getUid());
 
+        //Поиск элементов разметки
         final TextView inp_name = (TextView) findViewById(R.id.nav_user_name);
         final TextView inp_em = (TextView) findViewById(R.id.nav_user_email);
+
+        //Вывод данных из Firebase
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-                inp_name.setText(user.usersurname+" "+user.username);
+                inp_name.setText(user.usersurname + " " + user.username);
                 inp_em.setText(user.email);
-                ph=user.photo;
+                ph = user.photo;
                 changePhoto(ph);
             }
 
@@ -77,6 +82,7 @@ public class DrawerActivity extends AppCompatActivity
         return super.onCreatePanelMenu(featureId, menu);
     }
 
+    //Обновление фото по данным из Firebase
     private void changePhoto(int ph) {
         switch (ph) {
             case 1:
@@ -140,6 +146,7 @@ public class DrawerActivity extends AppCompatActivity
     }
 
 
+    //Обработка нажатия кнопки Назад на панели упревления телефона
     @Override
     public void onBackPressed() {
         moveTaskToBack(true);
@@ -148,39 +155,40 @@ public class DrawerActivity extends AppCompatActivity
         System.exit(0);
     }
 
-private void displaySelectedScreen(int id, MainFragment mainFragment){
-    Fragment fragment = null;
-    switch (id){
-        case R.id.main:
-            fragment = new MainFragment();
-            break;
-        case R.id.pain:
-            fragment = new PainFragment();
-            break;
-        case R.id.drug:
-            startActivity(new Intent(this, Drugs.class));
-            finish();
-            break;
-        case R.id.off:
-            FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(this, Index.class));
-            finish();
-            break;
+    //Обработка нажатия элементов бокового меню
+    private void displaySelectedScreen(int id, MainFragment mainFragment) {
+        Fragment fragment = null;
+        switch (id) {
+            case R.id.main:
+                fragment = new MainFragment();
+                break;
+            case R.id.pain:
+                fragment = new PainFragment();
+                break;
+            case R.id.drug:
+                startActivity(new Intent(this, Drugs.class));
+                finish();
+                break;
+            case R.id.off:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(this, Index.class));
+                finish();
+                break;
+        }
+        if (fragment != null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.container, fragment);
+            ft.commit();
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
-    if (fragment != null){
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.container, fragment);
-        ft.commit();
-    }
-    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-    drawer.closeDrawer(GravityCompat.START);
-}
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-       displaySelectedScreen(id, new MainFragment());
+        displaySelectedScreen(id, new MainFragment());
         return true;
 
     }

@@ -32,11 +32,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by EmilLatypov on 16.02.2018.
- * Активити "История болезней"
+ * Created by KamillaKhairullina
+ * Активити "История болезни"
  */
 public class History extends AppCompatActivity {
-    private LinkedList<Disease> diseases;
+    private LinkedList < Disease > diseases;
     private RecyclerView rv;
     private FirebaseAuth mAuth;
     private DatabaseReference mUserReference;
@@ -47,6 +47,8 @@ public class History extends AppCompatActivity {
 
     RVAdapter adapter;
     private static final String TAG = "History";
+
+    //Получение данных пользователя
     FirebaseUser user = mAuth.getInstance().getCurrentUser();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,68 +58,75 @@ public class History extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
-        rv=(RecyclerView)findViewById(R.id.rv);
+        rv = (RecyclerView) findViewById(R.id.rv);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
         rv.setHasFixedSize(true);
 
 
+        //Обращение к данным бд
         mUserReference = FirebaseDatabase.getInstance().getReference()
                 .child("disease").child(user.getUid());
         Log.d("initializte ", mUserReference.getKey());
-        im=findViewById(R.id.imageView3);
-        tx=findViewById(R.id.textView);
+        im = findViewById(R.id.imageView3);
+        tx = findViewById(R.id.textView);
 
     }
-//    private void initializeData(){
-     @Override
-     public void onStart() {
-         super.onStart();
-         diseases = new LinkedList<>();
-         Log.d("initializte ", "start");
-         ValueEventListener postListener = new ValueEventListener() {
 
-             @Override
-             public void onDataChange(DataSnapshot dataSnapshot) {
-                 Log.d("Change ", "started");
-                 Iterable<DataSnapshot> iterator = dataSnapshot.getChildren();
-                 Iterator<DataSnapshot> iterator1 = iterator.iterator();
-                 diseases.clear();
-                 while (iterator1.hasNext()) {
-                     DataSnapshot next = iterator1.next();
-                     Disease value = next.getValue(Disease.class);
+    @Override
+    public void onStart() {
+        super.onStart();
+        diseases = new LinkedList < > ();
+        Log.d("initializte ", "start");
+        //получение данных из Firebase
+        ValueEventListener postListener = new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Log.d("Change ", "started");
+                Iterable < DataSnapshot > iterator = dataSnapshot.getChildren();
+                Iterator < DataSnapshot > iterator1 = iterator.iterator();
+                diseases.clear();
+                while (iterator1.hasNext()) {
+                    DataSnapshot next = iterator1.next();
+                    Disease value = next.getValue(Disease.class);
                     diseases.addFirst(value);
                 }
                 adapter.notifyDataSetChanged();
 
-                 if (diseases.size() !=0) {
-                     im.setVisibility(View.GONE);
-                     tx.setVisibility(View.GONE);
-                 }
-             }
+                if (diseases.size() != 0) {
+                    im.setVisibility(View.GONE);
+                    tx.setVisibility(View.GONE);
+                }
+            }
 
-             @Override
-             public void onCancelled(DatabaseError databaseError) {
-                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-             }
-         };
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.w(TAG, "Не удалось загрузить пользователя", databaseError.toException());
+            }
+        };
 
-         mUserReference.addValueEventListener(postListener);
+        mUserReference.addValueEventListener(postListener);
 
-         mUserListener = postListener;
+        mUserListener = postListener;
 
-         adapter = new RVAdapter(diseases);
-         rv.setAdapter(adapter);
-         adapter.notifyDataSetChanged();
+        adapter = new RVAdapter(diseases);
 
-     }
+        //Добавление данных из адаптера в RecyclerView
+        rv.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
-@Override
-public boolean onCreateOptionsMenu(Menu menu) {
-    getMenuInflater().inflate(R.menu.menu_activity_main, menu);
-    return true;
-}
+    }
+
+    //Создание верхней панели управления
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_activity_main, menu);
+        return true;
+    }
+
+    //Обработка нажатия кнопок на верхней панели
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -125,7 +134,7 @@ public boolean onCreateOptionsMenu(Menu menu) {
                 this.finish();
                 return true;
             case R.id.action_remove:
-               mUserReference.setValue(null);
+                mUserReference.setValue(null);
                 im.setVisibility(View.VISIBLE);
                 tx.setVisibility(View.VISIBLE);
                 return true;

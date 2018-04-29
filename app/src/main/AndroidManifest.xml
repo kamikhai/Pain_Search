@@ -18,11 +18,11 @@
         </activity>
         <activity
             android:name=".MainWomanActivity"
-            android:label="Где у Вас болит?"
+            android:label="@string/where"
             android:theme="@style/AppRed" />
         <activity
             android:name=".MainManActivity"
-            android:label="Где у Вас болит?"
+            android:label="@string/where"
             android:theme="@style/AppRed" />
         <activity
             android:name=".MainActivity"
@@ -37,61 +37,61 @@
         </activity>
         <activity
             android:name=".Profile"
-            android:label="Профиль"
+            android:label="@string/profile"
             android:theme="@style/Profile"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".History"
-            android:label="История болезней"
+            android:label="@string/historyCard"
             android:theme="@style/AppRed" />
         <activity
             android:name=".Head"
-            android:label="Голова"
+            android:label="@string/head"
             android:theme="@style/AppRed" />
         <activity
             android:name=".Thigs"
-            android:label="Бёдра"
+            android:label="@string/thigs"
             android:theme="@style/AppRed" />
         <activity
             android:name=".StomachMan"
-            android:label="Живот"
+            android:label="@string/Stomach"
             android:theme="@style/AppRed" />
         <activity
             android:name=".StomachWoman"
-            android:label="Живот"
+            android:label="@string/Stomach"
             android:theme="@style/AppRed" />
         <activity
             android:name=".Chest"
-            android:label="Грудная клетка"
+            android:label="@string/chest"
             android:theme="@style/AppRed" />
         <activity
             android:name=".Arms"
-            android:label="Руки"
+            android:label="@string/arms"
             android:theme="@style/AppRed" />
         <activity
             android:name=".Shank"
-            android:label="Голени"
+            android:label="@string/shank"
             android:theme="@style/AppRed" />
         <activity
             android:name=".Neck"
-            android:label="Шея"
+            android:label="@string/neck"
             android:theme="@style/AppRed" />
         <activity
             android:name=".Hands"
-            android:label="Кисти"
+            android:label="@string/hands"
             android:theme="@style/AppRed" />
         <activity
             android:name=".Feet"
-            android:label="Стопы"
+            android:label="@string/feet"
             android:theme="@style/AppRed" />
         <activity
             android:name=".Info"
-            android:label="О приложении"
+            android:label="@string/information"
             android:theme="@style/AppRed" />
         <activity android:name=".change_img" />
 
         <activity android:name=".ConnectActivity"
-            android:label="Связаться с нами"
+            android:label="@string/con"
             android:theme="@style/Connect"></activity>
 
         <activity android:name=".Drugs" android:launchMode="singleTop" android:label="Выберите лекарство"

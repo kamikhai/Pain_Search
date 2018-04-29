@@ -31,22 +31,26 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * Created by EmilLatypov
+ * Активити Профиля
+ */
 public class Profile extends AppCompatActivity implements View.OnClickListener {
-    private TextView UserName,UserSurname,editPhoto;
+    private TextView UserName, UserSurname, editPhoto;
 
     private DatabaseReference mUserReference;
     private ValueEventListener mUserListener;
     private FirebaseAuth mAuth;
-    private LinearLayout NameLi,SurnameLi,NameLiEdit,SurnameLiEdit;
-    private ImageButton edName,edSurname;
-    private Button saName,saSurname;
-    private EditText changeName,changeSurname;
-    private String name,surname,email;
+    private LinearLayout NameLi, SurnameLi, NameLiEdit, SurnameLiEdit;
+    private ImageButton edName, edSurname;
+    private Button saName, saSurname;
+    private EditText changeName, changeSurname;
+    private String name, surname, email;
     private ImageView photo;
     private int ph;
 
 
+    //Получение данных пользователя
     FirebaseUser user = mAuth.getInstance().getCurrentUser();
 
     private static final String TAG = "Profile";
@@ -57,39 +61,41 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        //Обращение к бд
         mUserReference = FirebaseDatabase.getInstance().getReference()
                 .child("users").child(user.getUid());
 
         //Вывод имени
-        UserName=findViewById(R.id.name_lable);
-        UserSurname=findViewById(R.id.surname_lable);
+        UserName = findViewById(R.id.name_lable);
+        UserSurname = findViewById(R.id.surname_lable);
 
         //LinearLayout для отображения имени/фамилии
-        NameLi=findViewById(R.id.name_linear);
-        SurnameLi=findViewById(R.id.surname_linear);
+        NameLi = findViewById(R.id.name_linear);
+        SurnameLi = findViewById(R.id.surname_linear);
 
         //LinearLayout для изменения имени/фамилии
-        NameLiEdit=findViewById(R.id.name_linear_edit);
-        SurnameLiEdit=findViewById(R.id.surname_linear_edit);
+        NameLiEdit = findViewById(R.id.name_linear_edit);
+        SurnameLiEdit = findViewById(R.id.surname_linear_edit);
 
         //ImageButton для изменения имени/фамилии
-        edName=findViewById(R.id.edit_name);
+        edName = findViewById(R.id.edit_name);
         edName.setOnClickListener(this);
-        edSurname=findViewById(R.id.edit_surname);
+        edSurname = findViewById(R.id.edit_surname);
         edSurname.setOnClickListener(this);
 
         //Button для сохранения имени/фамилии
-        saName=findViewById(R.id.save_name);
+        saName = findViewById(R.id.save_name);
         saName.setOnClickListener(this);
-        saSurname=findViewById(R.id.save_surname);
+        saSurname = findViewById(R.id.save_surname);
         saSurname.setOnClickListener(this);
 
         //Поле ввода нового имени/фамилии
-        changeName=findViewById(R.id.input_name_prof);
-        changeSurname=findViewById(R.id.input_surname_prof);
+        changeName = findViewById(R.id.input_name_prof);
+        changeSurname = findViewById(R.id.input_surname_prof);
 
-        photo=findViewById(R.id.imageView2);
-        editPhoto=findViewById(R.id.edit_photo);
+        photo = findViewById(R.id.imageView2);
+        editPhoto = findViewById(R.id.edit_photo);
         editPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,8 +107,8 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
     public void presentActivity(View view) {
         ActivityOptionsCompat options = ActivityOptionsCompat.
                 makeSceneTransitionAnimation(this, view, "transition");
-        int revealX = (int) (view.getX() + view.getWidth() / 2);
-        int revealY = (int) (view.getY() + view.getHeight() / 2);
+        int revealX = (int)(view.getX() + view.getWidth() / 2);
+        int revealY = (int)(view.getY() + view.getHeight() / 2);
         Intent intent = new Intent(this, change_img.class);
         intent.putExtra(change_img.EXTRA_CIRCULAR_REVEAL_X, revealX);
         intent.putExtra(change_img.EXTRA_CIRCULAR_REVEAL_Y, revealY);
@@ -114,14 +120,15 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
     public void onStart() {
         super.onStart();
 
+        //Вывод данных на экран из бд
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-                name=user.username.toString();
-                surname=user.usersurname.toString();
-                email=user.email.toString();
-                ph=user.photo;
+                name = user.username.toString();
+                surname = user.usersurname.toString();
+                email = user.email.toString();
+                ph = user.photo;
                 changePhoto(ph);
                 UserName.setText(user.username);
                 UserSurname.setText(user.usersurname);
@@ -129,8 +136,8 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.w(TAG, "loadUser:onCancelled", databaseError.toException());
-                Toast.makeText(Profile.this, "Failed to load user.",
+                Log.w(TAG, "Загрузка пользователя: ", databaseError.toException());
+                Toast.makeText(Profile.this, "Не удалось загрузить пользователя",
                         Toast.LENGTH_SHORT).show();
             }
         };
@@ -138,9 +145,10 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
 
         mUserListener = postListener;
 
-        
+
     }
 
+    //Изменение фотографии профиля
     private void changePhoto(int ph) {
         switch (ph) {
             case 1:
@@ -182,6 +190,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
+    //Обработка нажатия кнопки назад
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -193,18 +202,20 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
+
+    //Обработка нажатия кнопок
     @Override
     public void onClick(View v) {
-        String newName,newSurname;
-        switch (v.getId()){
+        String newName, newSurname;
+        switch (v.getId()) {
             case R.id.edit_name:
                 NameLi.setVisibility(View.GONE);
                 NameLiEdit.setVisibility(View.VISIBLE);
                 break;
             case R.id.save_name:
-                newName=changeName.getText().toString();
-                User user1 = new User(surname,newName,email,ph);
-                Map<String, Object> userValues = user1.toMap();
+                newName = changeName.getText().toString();
+                User user1 = new User(surname, newName, email, ph);
+                Map < String, Object > userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
                 NameLiEdit.setVisibility(View.GONE);
                 NameLi.setVisibility(View.VISIBLE);
@@ -215,8 +226,8 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.save_surname:
 
-                newSurname=changeSurname.getText().toString();
-                user1 = new User(newSurname,name,email,ph);
+                newSurname = changeSurname.getText().toString();
+                user1 = new User(newSurname, name, email, ph);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
                 SurnameLiEdit.setVisibility(View.GONE);

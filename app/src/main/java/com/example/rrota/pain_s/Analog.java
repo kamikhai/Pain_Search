@@ -15,15 +15,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.IOException;
+/**
+ * Created by KamillaKhairullina
+ * Аналоги лекарств
+ */
 public class Analog extends AppCompatActivity {
 
-    TextView Name,Price,Subs,DrName,DrPrice;
-    ImageView img,imgDr;
+    TextView Name, Price, Subs, DrName, DrPrice;
+    ImageView img, imgDr;
 
     DatabaseHelper mDBHelper;
     SQLiteDatabase mDb;
     Cursor userCursor;
-    long userId=0;
+    long id = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,14 +38,16 @@ public class Analog extends AppCompatActivity {
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        Name=findViewById(R.id.an_name);
-        Price=findViewById(R.id.an_price);
-        Subs=findViewById(R.id.substance);
-        img=findViewById(R.id.an_img);
-        DrName=findViewById(R.id.dr_name);
-        DrPrice=findViewById(R.id.dr_price);
-        imgDr=findViewById(R.id.dr_img);
+        //Поиск элементов разметки
+        Name = findViewById(R.id.an_name);
+        Price = findViewById(R.id.an_price);
+        Subs = findViewById(R.id.substance);
+        img = findViewById(R.id.an_img);
+        DrName = findViewById(R.id.dr_name);
+        DrPrice = findViewById(R.id.dr_price);
+        imgDr = findViewById(R.id.dr_img);
 
+        //Подключение к SQLite
         mDBHelper = new DatabaseHelper(this);
 
         try {
@@ -55,15 +62,20 @@ public class Analog extends AppCompatActivity {
             throw mSQLException;
         }
 
+        //Получение id эл-та, который выбрали в ListView
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            userId = extras.getLong("id");
+            id = extras.getLong("id");
         }
 
-        // получаем элемент по id из бд
+        // получение элемента по id из бд
         userCursor = mDb.rawQuery("select * from " + DatabaseHelper.TABLE + " where " +
-                DatabaseHelper.COLUMN_ID + " =? ", new String[]{String.valueOf(userId)});
+                DatabaseHelper.COLUMN_ID + " =? ", new String[] {
+                String.valueOf(id)
+        });
         userCursor.moveToFirst();
+
+        //Вывод данных на экран
         DrName.setText(userCursor.getString(1));
         DrPrice.setText(userCursor.getString(2));
         Name.setText(userCursor.getString(4));
@@ -78,6 +90,7 @@ public class Analog extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        //Обработка нажатия клавиши Назад
         switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();

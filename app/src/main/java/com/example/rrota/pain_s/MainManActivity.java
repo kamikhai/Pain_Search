@@ -7,13 +7,18 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-
+/**
+ * Created by KamillaKhairullina
+ * Активити Мужчина
+ */
 public class MainManActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_man);
+
+        //Поиск элементов разметки
         ImageButton bh = (ImageButton) findViewById(R.id.mh);
         ImageButton bn = (ImageButton) findViewById(R.id.mn);
         ImageButton bs = (ImageButton) findViewById(R.id.ms);
@@ -39,11 +44,14 @@ public class MainManActivity extends AppCompatActivity {
         blf.setOnClickListener(onClickListener);
         bbb.setOnClickListener(onClickListener);
         bl.setOnClickListener(onClickListener);
-        bf.setOnClickListener(onClickListener);ActionBar actionBar = getSupportActionBar();
+        bf.setOnClickListener(onClickListener);
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
 
     }
+
+    //Обработка нажатия кнопок
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -54,6 +62,8 @@ public class MainManActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    //Обработка нажатия на различные части тела
     private final View.OnClickListener onClickListener = new View.OnClickListener() {
 
         @Override
@@ -65,51 +75,51 @@ public class MainManActivity extends AppCompatActivity {
                     startActivity(ih);
                     break;
                 case R.id.mn:
-                     ih = new Intent(MainManActivity.this, Neck.class);
+                    ih = new Intent(MainManActivity.this, Neck.class);
                     startActivity(ih);
                     break;
                 case R.id.mb:
-                     ih = new Intent(MainManActivity.this, Chest.class);
+                    ih = new Intent(MainManActivity.this, Chest.class);
                     startActivity(ih);
                     break;
                 case R.id.mls:
-                     ih = new Intent(MainManActivity.this, Arms.class);
+                    ih = new Intent(MainManActivity.this, Arms.class);
                     startActivity(ih);
                     break;
                 case R.id.mrs:
-                     ih = new Intent(MainManActivity.this, Arms.class);
+                    ih = new Intent(MainManActivity.this, Arms.class);
                     startActivity(ih);
                     break;
                 case R.id.mla:
-                     ih = new Intent(MainManActivity.this, Arms.class);
+                    ih = new Intent(MainManActivity.this, Arms.class);
                     startActivity(ih);
                     break;
                 case R.id.mra:
-                     ih = new Intent(MainManActivity.this, Arms.class);
+                    ih = new Intent(MainManActivity.this, Arms.class);
                     startActivity(ih);
                     break;
                 case R.id.ms:
-                     ih = new Intent(MainManActivity.this, StomachMan.class);
+                    ih = new Intent(MainManActivity.this, StomachMan.class);
                     startActivity(ih);
                     break;
                 case R.id.mlf:
-                     ih = new Intent(MainManActivity.this, Hands.class);
+                    ih = new Intent(MainManActivity.this, Hands.class);
                     startActivity(ih);
                     break;
                 case R.id.mrf:
-                     ih = new Intent(MainManActivity.this, Hands.class);
+                    ih = new Intent(MainManActivity.this, Hands.class);
                     startActivity(ih);
                     break;
                 case R.id.mbb:
-                     ih = new Intent(MainManActivity.this, Thigs.class);
+                    ih = new Intent(MainManActivity.this, Thigs.class);
                     startActivity(ih);
                     break;
                 case R.id.ml:
-                     ih = new Intent(MainManActivity.this, Shank.class);
+                    ih = new Intent(MainManActivity.this, Shank.class);
                     startActivity(ih);
                     break;
                 case R.id.mf:
-                     ih = new Intent(MainManActivity.this, Feet.class);
+                    ih = new Intent(MainManActivity.this, Feet.class);
                     startActivity(ih);
                     break;
 

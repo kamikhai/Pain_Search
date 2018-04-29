@@ -28,6 +28,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Map;
 
+/**
+ * Created by EmilLatypov
+ * Выбор картинки профиля
+ */
 public class change_img extends AppCompatActivity implements View.OnClickListener {
     public static final String EXTRA_CIRCULAR_REVEAL_X = "EXTRA_CIRCULAR_REVEAL_X";
     public static final String EXTRA_CIRCULAR_REVEAL_Y = "EXTRA_CIRCULAR_REVEAL_Y";
@@ -35,12 +39,14 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
     public ImageView image;
     private int revealX;
     private int revealY;
-    private String name,surname,email;
+    private String name, surname, email;
     private FirebaseAuth mAuth;
     private DatabaseReference mUserReference;
     private ValueEventListener mUserListener;
 
     private static final String TAG = "change_image";
+
+    //Получаение данных пользователя
     FirebaseUser user = mAuth.getInstance().getCurrentUser();
 
     @Override
@@ -103,45 +109,45 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
             rootLayout.setVisibility(View.VISIBLE);
         }
 
+        //Обращение к данным в Firebase
         mUserReference = FirebaseDatabase.getInstance().getReference()
                 .child("users").child(user.getUid());
     }
 
+
+    //Получение данных из Firebase
     @Override
     public void onStart() {
         super.onStart();
-
-        ValueEventListener postListener = new ValueEventListener() {
+        ValueEventListener userListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-                name=user.username.toString();
-                surname=user.usersurname.toString();
-                email=user.email.toString();
+                name = user.username.toString();
+                surname = user.usersurname.toString();
+                email = user.email.toString();
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                Toast.makeText(change_img.this, "Failed to load user.",
+                Log.w(TAG, "Загрузка пользователя:", databaseError.toException());
+                Toast.makeText(change_img.this, "Не удается найти пользователя",
                         Toast.LENGTH_SHORT).show();
             }
         };
-        mUserReference.addValueEventListener(postListener);
-
-        mUserListener = postListener;
-
+        mUserReference.addValueEventListener(userListener);
+        mUserListener = userListener;
 
     }
 
     protected void revealActivity(int x, int y) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            float finalRadius = (float) (Math.max(rootLayout.getWidth(), rootLayout.getHeight()) * 1.1);
-            // create the animator for this view (the start radius is zero)
+            float finalRadius = (float)(Math.max(rootLayout.getWidth(), rootLayout.getHeight()) * 1.1);
+            // Создание анимации для view (начальный радиус 0)
             Animator circularReveal = ViewAnimationUtils.createCircularReveal(rootLayout, x, y, 0, finalRadius);
             circularReveal.setDuration(400);
             circularReveal.setInterpolator(new AccelerateInterpolator());
-            // make the view visible and start the animation
+            // Сделать view видимым и начать анимацию
             rootLayout.setVisibility(View.VISIBLE);
             circularReveal.start();
         } else {
@@ -153,7 +159,7 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             finish();
         } else {
-            float finalRadius = (float) (Math.max(rootLayout.getWidth(), rootLayout.getHeight()) * 1.1);
+            float finalRadius = (float)(Math.max(rootLayout.getWidth(), rootLayout.getHeight()) * 1.1);
             Animator circularReveal = ViewAnimationUtils.createCircularReveal(
                     rootLayout, revealX, revealY, finalRadius, 0);
             circularReveal.setDuration(400);
@@ -177,78 +183,79 @@ public class change_img extends AppCompatActivity implements View.OnClickListene
         }
     }
 
+    //Обработка нажатия на картинки для профиля и добавление новых данных в Firebase
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.us_1:
-                User user1 = new User(surname,name,email,1);
-                Map<String, Object> userValues = user1.toMap();
+                User user1 = new User(surname, name, email, 1);
+                Map < String, Object > userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
                 onBackPressed();
                 break;
             case R.id.us_2:
-                user1 = new User(surname,name,email,2);
+                user1 = new User(surname, name, email, 2);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
                 onBackPressed();
                 break;
             case R.id.us_3:
-                user1 = new User(surname,name,email,3);
+                user1 = new User(surname, name, email, 3);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
                 onBackPressed();
                 break;
             case R.id.us_4:
-                user1 = new User(surname,name,email,4);
+                user1 = new User(surname, name, email, 4);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
                 onBackPressed();
                 break;
             case R.id.us_5:
-                user1 = new User(surname,name,email,5);
+                user1 = new User(surname, name, email, 5);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
                 onBackPressed();
                 break;
             case R.id.us_6:
-                user1 = new User(surname,name,email,6);
+                user1 = new User(surname, name, email, 6);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
                 onBackPressed();
                 break;
             case R.id.us_7:
-                user1 = new User(surname,name,email,7);
+                user1 = new User(surname, name, email, 7);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
                 onBackPressed();
                 break;
             case R.id.us_8:
-                user1 = new User(surname,name,email,8);
+                user1 = new User(surname, name, email, 8);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
 
                 onBackPressed();
                 break;
             case R.id.us_9:
-                user1 = new User(surname,name,email,9);
+                user1 = new User(surname, name, email, 9);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
                 onBackPressed();
                 break;
             case R.id.us_10:
-                user1 = new User(surname,name,email,10);
+                user1 = new User(surname, name, email, 10);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
                 onBackPressed();
                 break;
             case R.id.us_11:
-                user1 = new User(surname,name,email,11);
+                user1 = new User(surname, name, email, 11);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
                 onBackPressed();
                 break;
             case R.id.us_12:
-                user1 = new User(surname,name,email,12);
+                user1 = new User(surname, name, email, 12);
                 userValues = user1.toMap();
                 mUserReference.updateChildren(userValues);
                 onBackPressed();
