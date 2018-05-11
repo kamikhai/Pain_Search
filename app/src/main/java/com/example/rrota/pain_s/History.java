@@ -24,6 +24,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -74,6 +76,18 @@ public class History extends AppCompatActivity {
 
     }
 
+    void startApplication(){
+        Thread loadingThread = new Thread();
+        loadingThread.start();
+        try {
+            wait();
+        } catch (InterruptedException e) {
+        }
+        //YOUR CODE will be placed HERE
+        //...
+        // Показ изображений (ПОСЛЕ ОКОНЧАНИЯ загрузки)
+        //...
+    }
     @Override
     public void onStart() {
         super.onStart();

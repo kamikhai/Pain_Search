@@ -150,4 +150,13 @@ public class Index extends BaseActivity implements View.OnClickListener {
             startActivity(new Intent(Index.this, MainActivity.class));
         }
     }
+
+    //Обработка нажатия кнопки Назад на панели упревления телефона
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+        finish();
+        System.runFinalizersOnExit(true);
+        System.exit(0);
+    }
 }

@@ -300,7 +300,7 @@ public class StomachMan extends AppCompatActivity implements View.OnClickListene
         //Вывод специалистов в зависимости от болезни
         String s2 = "Советуем вам обратиться к терапевту.\n";
 
-        s2 += "\n Также специалисты:\n - Хирург\n - Гастроэнетеролог\n ";
+        s2 += "\n Также специалисты:\n - Хирург\n - Гастроэнтеролог\n ";
         if ((count[2] == -1)) s2 += "- Проктолог\n ";
         tx2.setText(s2);
         tx2.setTextSize(20);
