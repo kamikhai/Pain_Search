@@ -327,7 +327,7 @@ public class StomachWoman extends AppCompatActivity implements View.OnClickListe
         String s2 = "Советуем вам обратиться к терапевту.\n ";
 
         s2 += "\n \nТакже специалисты:\n ";
-        if ((count[0] == -1) || (count[1] == -1) || (count[2] == -1) || (count[3] == -1)) s2 += "- Хирург\n - Гастроэнетеролог\n ";
+        if ((count[0] == -1) || (count[1] == -1) || (count[2] == -1) || (count[3] == -1)) s2 += "- Хирург\n - Гастроэнтеролог\n ";
         if ((count[2] == -1)) s2 += "- Проктолог\n ";
         if ((count[3] == -1) || (count[4] == -1)) s2 += "- Гинеколог\n ";
         tx2.setText(s2);
