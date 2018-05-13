@@ -149,21 +149,14 @@ public class Drugs extends AppCompatActivity {
 
     }
 
-    //Обработка нажатия кнопки назад на панели управления телефона
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent gog = new Intent(this, DrawerActivity.class);
-        startActivity(gog);
-    }
+
 
     //Обработка нажатия кнопки назад
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent gog = new Intent(this, DrawerActivity.class);
-                startActivity(gog);
+               onBackPressed();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
