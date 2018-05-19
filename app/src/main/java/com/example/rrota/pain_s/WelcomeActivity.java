@@ -37,38 +37,13 @@ private LinearLayout dotsLayout;
 Button btn_next ;
 Button skip;
 //Определяем нижнее  вью
-
+LinearLayout linearLayout ;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // настройка состояний нижнего экрана
-        // bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-        //bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
-
-
-        // настройка максимальной высоты
-        // bottomSheetBehavior.setPeekHeight(340);
-
-        // настройка возможности скрыть элемент при свайпе вниз
-        //bottomSheetBehavior.setHideable(false);
-
-        // настройка колбэков при изменениях
-        // bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-
-        // @Override
-            //public void onStateChanged(@NonNull View bottomSheet, int newState) {
-
-//            }
-
-//            @Override
-//            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-
-  //          }
-      //  });
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -103,6 +78,11 @@ Button skip;
         if(Build.VERSION.SDK_INT>=21){
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE|View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
+
+linearLayout = (LinearLayout) findViewById(R.id.bottomview );
+
+
+// настройка возможности скрыть элемент при свайпе вниз
 
 
         setContentView(R.layout.activity_welcome);
