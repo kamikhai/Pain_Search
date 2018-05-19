@@ -27,14 +27,14 @@ import com.google.firebase.auth.FirebaseUser;
  * Активити появляющееся сначала
  */
 public class WelcomeActivity extends AppCompatActivity {
-    private ViewPager viewPager;
-    private Welcome_manager welcome_manager;
-    private int[] layouts;
-    private ViewPagerAdapter viewPagerAdapter;
-    private TextView[] dots;
-    private LinearLayout dotsLayout;
-    Button btn_next ;
-    Button skip;
+private ViewPager viewPager;
+private Welcome_manager welcome_manager;
+private int[] layouts;
+private ViewPagerAdapter viewPagerAdapter;
+private TextView[] dots;
+private LinearLayout dotsLayout;
+Button btn_next ;
+Button skip;
 //Определяем нижнее  вью
 
     private FirebaseAuth mAuth;
