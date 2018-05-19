@@ -33,8 +33,10 @@ public class WelcomeActivity extends AppCompatActivity {
     private ViewPagerAdapter viewPagerAdapter;
     private TextView[] dots;
     private LinearLayout dotsLayout;
-    Button btn_next;
+    Button btn_next ;
     Button skip;
+//Определяем нижнее  вью
+
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
