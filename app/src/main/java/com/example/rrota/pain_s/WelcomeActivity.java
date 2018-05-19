@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -43,6 +44,31 @@ Button skip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // настройка состояний нижнего экрана
+        // bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+        //bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+
+
+        // настройка максимальной высоты
+        // bottomSheetBehavior.setPeekHeight(340);
+
+        // настройка возможности скрыть элемент при свайпе вниз
+        //bottomSheetBehavior.setHideable(false);
+
+        // настройка колбэков при изменениях
+        // bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+
+        // @Override
+            //public void onStateChanged(@NonNull View bottomSheet, int newState) {
+
+//            }
+
+//            @Override
+//            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+
+  //          }
+      //  });
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -67,8 +93,8 @@ Button skip;
         welcome_manager = new Welcome_manager(this);
         if (!welcome_manager.Check()) {
             welcome_manager.setFirst(false);
-            Intent i = new Intent(WelcomeActivity.this, Index.class);
-            startActivity(i);
+            Intent y = new Intent(WelcomeActivity.this, Index.class);
+            startActivity(y);
             finish();
         }
 
