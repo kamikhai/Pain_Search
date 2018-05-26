@@ -50,6 +50,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
     private int ph;
 
 
+
     //Получение данных пользователя
     FirebaseUser user = mAuth.getInstance().getCurrentUser();
 
