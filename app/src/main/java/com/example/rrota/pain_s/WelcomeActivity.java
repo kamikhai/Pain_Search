@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -22,21 +23,26 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import static com.example.rrota.pain_s.R.color.deep_purple;
+import static com.example.rrota.pain_s.R.color.yellow;
+
 /**
  * Created by EmilLatypov
  * Активити появляющееся сначала
  */
-public class WelcomeActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
     private ViewPager viewPager;
     private Welcome_manager welcome_manager;
     private int[] layouts;
     private ViewPagerAdapter viewPagerAdapter;
     private TextView[] dots;
     private LinearLayout dotsLayout;
-    Button btn_next;
+    Button btn_next,yes,no;
     Button skip;
     private FirebaseAuth mAuth;
+    LinearLayout llBottomSheet;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private TextView sogl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +86,13 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         dotsLayout = (LinearLayout) findViewById(R.id.Layout_main);
-        skip = (Button) findViewById(R.id.skip);
         btn_next = (Button) findViewById(R.id.btn_next);
+        skip = (Button) findViewById(R.id.skip);
+        llBottomSheet = (LinearLayout) findViewById(R.id.bottom_sheet);
+        yes = (Button) findViewById(R.id.yes);
+        no = (Button) findViewById(R.id.no);
+        yes.setOnClickListener(this);
+        no.setOnClickListener(this);
         layouts = new int[] {
                 R.layout.welcome_screen1, R.layout.welcome_screen2, R.layout.welcome_screen3
         };
@@ -90,16 +101,9 @@ public class WelcomeActivity extends AppCompatActivity {
         viewPagerAdapter = new ViewPagerAdapter();
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.addOnPageChangeListener(viewListener);
+        sogl = (TextView) findViewById(R.id.soglash);
 
 
-        skip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(WelcomeActivity.this, Index.class);
-                startActivity(i);
-                finish();
-            }
-        });
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,14 +111,37 @@ public class WelcomeActivity extends AppCompatActivity {
                 if (current < layouts.length) {
                     viewPager.setCurrentItem(current);
                 } else {
-                    Intent i = new Intent(WelcomeActivity.this, Index.class);
-                    startActivity(i);
-                    finish();
+                    llBottomSheet.setVisibility(View.VISIBLE);
+                    dotsLayout.removeAllViews();
+                    btn_next.setVisibility(View.GONE);
                 }
             }
         });
-    }
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                llBottomSheet.setVisibility(View.VISIBLE);
+                dotsLayout.removeAllViews();
+                btn_next.setVisibility(View.GONE);
+            }
+        });
 
+
+    }
+    public void onClick(View view){
+        switch (view.getId()) {
+            case R.id.yes:
+                Intent ih = new Intent(WelcomeActivity.this, Index.class);
+                startActivity(ih);
+                break;
+            case R.id.no:
+                moveTaskToBack(true);
+                finish();
+                System.runFinalizersOnExit(true);
+                System.exit(0);
+                break;
+
+    }}
 
     private void addBottomDots(int position) {
         dots = new TextView[layouts.length];
@@ -139,6 +166,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private int getItem(int i) {
         return viewPager.getCurrentItem() + i;
     }
+
 
 
 
@@ -173,6 +201,7 @@ public class WelcomeActivity extends AppCompatActivity {
             window.setStatusBarColor(Color.TRANSPARENT);
         }
     }
+
     public class ViewPagerAdapter extends PagerAdapter {
         private LayoutInflater layoutInflater;
 
