@@ -141,7 +141,7 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
                 System.exit(0);
                 break;
 
-        }}
+    }}
 
     private void addBottomDots(int position) {
         dots = new TextView[layouts.length];
