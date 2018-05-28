@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -39,8 +40,9 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
     private LinearLayout dotsLayout;
     Button btn_next,yes,no;
     Button skip;
+    private View line;
     private FirebaseAuth mAuth;
-    LinearLayout llBottomSheet;
+    ConstraintLayout llBottomSheet;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private TextView sogl;
 
@@ -88,9 +90,10 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         dotsLayout = (LinearLayout) findViewById(R.id.Layout_main);
         btn_next = (Button) findViewById(R.id.btn_next);
         skip = (Button) findViewById(R.id.skip);
-        llBottomSheet = (LinearLayout) findViewById(R.id.bottom_sheet);
+        llBottomSheet = (ConstraintLayout) findViewById(R.id.bottom_sheet);
         yes = (Button) findViewById(R.id.yes);
         no = (Button) findViewById(R.id.no);
+        line=findViewById(R.id.view);
         yes.setOnClickListener(this);
         no.setOnClickListener(this);
         layouts = new int[] {
@@ -114,6 +117,7 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
                     llBottomSheet.setVisibility(View.VISIBLE);
                     dotsLayout.removeAllViews();
                     btn_next.setVisibility(View.GONE);
+                    line.setVisibility(View.GONE);
                 }
             }
         });
@@ -123,6 +127,7 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
                 llBottomSheet.setVisibility(View.VISIBLE);
                 dotsLayout.removeAllViews();
                 btn_next.setVisibility(View.GONE);
+                line.setVisibility(View.GONE);
             }
         });
 
