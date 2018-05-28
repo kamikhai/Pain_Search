@@ -15,7 +15,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
     <string name="main">Главная</string>
-    <string name="history">Здесь будет отражена история ваших болезней</string>
+    <string name="history">Здесь будет отражена история вашей болезни</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_drawer">Главная</string>
     <string name="questions">Ответьте на несколько вопросов:</string>
@@ -73,6 +73,7 @@
     <string name="feet">Стопы</string>
     <string name="information">О приложении</string>
     <string name="con">Связаться с нами</string>
+    <string name="soglashenie">Принимая пользовательское соглашение, вы подтверждаете свое ознакомление с ним. \n Главные пункты : \n 1.Вся информация, находящаяся в приложении, носит только информативный характер. \n 2.Информация предоставлена для личных некоммерческих целей. \n 3.Пользователь сам несет ответственность за свое здоровье.</string>
 
 
 </resources>
