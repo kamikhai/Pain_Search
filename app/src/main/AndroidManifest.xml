@@ -109,6 +109,10 @@
         <activity android:name=".Analog"
             android:label="Аналог"
             android:theme="@style/AppRed"></activity>
+
+        <activity android:name=".DrugsInfo"
+            android:label="Информация о лекарстве"
+            android:theme="@style/Connect"></activity>
     </application>
 
 </manifest>

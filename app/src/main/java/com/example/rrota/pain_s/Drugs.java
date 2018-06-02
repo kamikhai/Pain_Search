@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -19,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
@@ -31,9 +34,11 @@ import java.io.IOException;
  */
 public class Drugs extends AppCompatActivity {
     //Объявим переменные компонентов
-    TextView textView;
+    TextView textView,nointernet;
     private DrawerLayout mDrawer;
     private ActionBarDrawerToggle actBar;
+    ImageView nowifi;
+
 
     //Переменная для работы с БД
     private DatabaseHelper mDBHelper;
@@ -72,10 +77,17 @@ public class Drugs extends AppCompatActivity {
         } catch (SQLException mSQLException) {
             throw mSQLException;
         }
+        nointernet=findViewById(R.id.nointernet);
+        nowifi=findViewById(R.id.no_wifi);
 
         //Обработка нажатия на элементы списка
         userList = (ListView) findViewById(R.id.list);
-        userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        if (!checkNetworkStatus(getApplicationContext())){
+            userList.setVisibility(View.GONE);
+            nowifi.setVisibility(View.VISIBLE);
+            nointernet.setVisibility(View.VISIBLE);
+        }
+            userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView < ? > parent, View view, int position, long id) {
                 Log.d("myLog", "Начал");
@@ -85,7 +97,19 @@ public class Drugs extends AppCompatActivity {
             }
         });
     }
+    public boolean checkNetworkStatus(Context context){
 
+        final ConnectivityManager connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo nInfo = connMgr.getActiveNetworkInfo();
+
+        final android.net.NetworkInfo wifi = connMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        final android.net.NetworkInfo mobile = connMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+        if( (wifi.isAvailable() || mobile.isAvailable()) && (nInfo != null) && nInfo.isConnected() ) return true;
+
+        return false;
+    }
 
     @Override
     public void onResume() {
@@ -94,12 +118,12 @@ public class Drugs extends AppCompatActivity {
         userCursor = mDb.rawQuery("select * from " + DatabaseHelper.TABLE, null);
         // определяем, какие столбцы из курсора будут выводиться в ListView
         String[] headers = new String[] {
-                DatabaseHelper.COLUMN_NAME, DatabaseHelper.COLUMN_PRICE, DatabaseHelper.COLUMN_IMG
+                DatabaseHelper.COLUMN_NAME, DatabaseHelper.COLUMN_IMG
         };
         // создаем адаптер, передаем в него курсор
         userAdapter = new SimpleCursorAdapter(this, R.layout.card,
                 userCursor, headers, new int[] {
-                R.id.name, R.id.price, R.id.drug
+                R.id.name, R.id.drug
         }, 0);
         userList.setAdapter(userAdapter);
 

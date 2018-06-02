@@ -1,6 +1,11 @@
 package com.example.rrota.pain_s;
 
 import android.annotation.SuppressLint;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,9 +28,18 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -43,6 +57,9 @@ public class History extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference mUserReference;
     private ValueEventListener mUserListener;
+    String price;
+    Image img;
+    Bitmap mIcon_val;
 
     ImageView im;
     TextView tx;
@@ -73,21 +90,36 @@ public class History extends AppCompatActivity {
         Log.d("initializte ", mUserReference.getKey());
         im = findViewById(R.id.imageView3);
         tx = findViewById(R.id.textView);
+        new JSo().execute();
+
 
     }
 
-    void startApplication(){
-        Thread loadingThread = new Thread();
-        loadingThread.start();
-        try {
-            wait();
-        } catch (InterruptedException e) {
+    class JSo extends AsyncTask<String, String, String> {
+
+        protected String doInBackground(String... urls) {
+            Document doc = null;
+            URL newurl = null;
+            try {
+                String ur="https://apteka.ru/catalog/drotaverin-0-04-n100-tabl-organika-_5a86a76da4f05/";
+                doc = Jsoup.connect(ur).get();
+                Log.w("Name", doc.title());
+
+                Elements els = doc.select("div[class=price m--mobile_font ]");
+                price=els.select("span").text();
+                Log.w("Price", price);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
         }
-        //YOUR CODE will be placed HERE
-        //...
-        // Показ изображений (ПОСЛЕ ОКОНЧАНИЯ загрузки)
-        //...
+
+        protected void onPostExecute(String result) {
+            tx.setText(price);
+        }
+
     }
+
     @Override
     public void onStart() {
         super.onStart();

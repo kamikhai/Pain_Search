@@ -16,7 +16,7 @@ import java.io.OutputStream;
  * SQLite
  */
 class DatabaseHelper extends SQLiteOpenHelper {
-    private static String DB_NAME = "PainS.db";
+    private static String DB_NAME = "PainSearch.db";
     private static String DB_PATH = "";
     private static final int DB_VERSION = 2;
     // название таблицы в бд
@@ -26,6 +26,8 @@ class DatabaseHelper extends SQLiteOpenHelper {
     static final String COLUMN_NAME = "name";
     static final String COLUMN_PRICE = "price";
     static final String COLUMN_IMG = "img";
+    static final String COLUMN_LINK = "link";
+    static final String COLUMN_AN_LINK = "an_link";
     static final String COLUMN_AN_NAME = "an_name";
     static final String COLUMN_AN_PRICE = "an_price";
     static final String COLUMN_AN_IMG = "an_img";
