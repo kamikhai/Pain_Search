@@ -42,7 +42,7 @@
     <string name="deist">Действующее вещество:</string>
     <string name="drug">Лекарство:</string>
     <string name="title">Название</string>
-    <string name="price">Цена</string>
+    <string name="price">Загрузка...</string>
     <string name="analog">Аналог:</string>
     <string name="consultation">Необходима консультация специалиста</string>
     <string name="profile">Профиль</string>

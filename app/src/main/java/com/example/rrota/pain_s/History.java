@@ -1,6 +1,11 @@
 package com.example.rrota.pain_s;
 
 import android.annotation.SuppressLint;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,9 +28,18 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -74,20 +88,11 @@ public class History extends AppCompatActivity {
         im = findViewById(R.id.imageView3);
         tx = findViewById(R.id.textView);
 
+
     }
 
-    void startApplication(){
-        Thread loadingThread = new Thread();
-        loadingThread.start();
-        try {
-            wait();
-        } catch (InterruptedException e) {
-        }
-        //YOUR CODE will be placed HERE
-        //...
-        // Показ изображений (ПОСЛЕ ОКОНЧАНИЯ загрузки)
-        //...
-    }
+
+
     @Override
     public void onStart() {
         super.onStart();
