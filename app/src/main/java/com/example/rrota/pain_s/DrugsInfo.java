@@ -28,7 +28,7 @@ public class DrugsInfo extends BaseActivity {
 
         //Загрузка WebView
         setContentView(R.layout.drug_information);
-        webView = (WebView) findViewById(R.id.webWiew2);
+        webView = (WebView) findViewById(R.id.dr_info);
         webView.setWebViewClient(new WebViewClient());
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);

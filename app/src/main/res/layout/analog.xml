@@ -262,10 +262,10 @@
 
         <LinearLayout
             android:id="@+id/danger"
-            android:visibility="gone"
+
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginEnd="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
@@ -295,10 +295,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="22dp"
                 android:layout_weight="1"
                 android:text="Рецептурный препарат"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

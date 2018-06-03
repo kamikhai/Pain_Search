@@ -57,9 +57,6 @@ public class History extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference mUserReference;
     private ValueEventListener mUserListener;
-    String price;
-    Image img;
-    Bitmap mIcon_val;
 
     ImageView im;
     TextView tx;
@@ -90,35 +87,11 @@ public class History extends AppCompatActivity {
         Log.d("initializte ", mUserReference.getKey());
         im = findViewById(R.id.imageView3);
         tx = findViewById(R.id.textView);
-        new JSo().execute();
 
 
     }
 
-    class JSo extends AsyncTask<String, String, String> {
 
-        protected String doInBackground(String... urls) {
-            Document doc = null;
-            URL newurl = null;
-            try {
-                String ur="https://apteka.ru/catalog/drotaverin-0-04-n100-tabl-organika-_5a86a76da4f05/";
-                doc = Jsoup.connect(ur).get();
-                Log.w("Name", doc.title());
-
-                Elements els = doc.select("div[class=price m--mobile_font ]");
-                price=els.select("span").text();
-                Log.w("Price", price);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        protected void onPostExecute(String result) {
-            tx.setText(price);
-        }
-
-    }
 
     @Override
     public void onStart() {

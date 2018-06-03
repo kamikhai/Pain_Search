@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <WebView
-        android:id="@+id/webWiew2"
+        android:id="@+id/dr_info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="8dp"
